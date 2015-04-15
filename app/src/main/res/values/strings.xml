@@ -4,5 +4,15 @@
     <string name="app_name">BanDoNhaTro</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Mật khẩu</string>
+    <string name="hint_name">Họ tên</string>
+    <string name="btn_login">Đăng nhập</string>
+    <string name="btn_register">Đăng kí</string>
+    <string name="btn_link_to_register">Chưa có tài khoản. Đăng kí ngay!</string>
+    <string name="btn_link_to_login">Đã có tài khoản. Đăng nhập ngay!</string>
+    <string name="welcome">Xin chào</string>
+    <string name="btn_logout">Đăng xuất</string>
+    <string name="name">Họ tên</string>
 
 </resources>
