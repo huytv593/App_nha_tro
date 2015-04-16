@@ -24,7 +24,12 @@
             android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity
-            android:name=".SignupActivity"
+            android:name=".RegisterActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ProfileActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:windowSoftInputMode="adjustPan" />

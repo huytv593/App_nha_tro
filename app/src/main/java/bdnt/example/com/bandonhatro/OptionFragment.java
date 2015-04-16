@@ -11,7 +11,6 @@ import android.widget.Button;
 
 public class OptionFragment extends Fragment {
     Button btnDangTin;
-    Button btnLinkDangKi;
     Button btnGioiThieu;
 
     @Override

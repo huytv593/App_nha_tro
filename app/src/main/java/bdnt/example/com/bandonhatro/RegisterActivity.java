@@ -25,8 +25,8 @@ import java.util.Map;
 import bdnt.example.com.bandonhatro.helper.SQLiteHandler;
 import bdnt.example.com.bandonhatro.helper.SessionManager;
 
-public class SignupActivity extends Activity {
-    private static final String TAG = SignupActivity.class.getSimpleName();
+public class RegisterActivity extends Activity {
+    private static final String TAG = RegisterActivity.class.getSimpleName();
     private Button btnRegister;
     private Button btnLinkToLogin;
     private EditText inputFullName;
@@ -39,7 +39,7 @@ public class SignupActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.signup);
+        setContentView(R.layout.activity_register);
 
         inputFullName = (EditText) findViewById(R.id.name);
         inputEmail = (EditText) findViewById(R.id.email);
@@ -60,7 +60,7 @@ public class SignupActivity extends Activity {
         // Check if user is already logged in or not
         if (session.isLoggedIn()) {
             // User is already logged in. Take him to main activity
-            Intent intent = new Intent(SignupActivity.this,
+            Intent intent = new Intent(RegisterActivity.this,
                     MainActivity.class);
             startActivity(intent);
             finish();
@@ -135,7 +135,7 @@ public class SignupActivity extends Activity {
 
                         // Launch login activity
                         Intent intent = new Intent(
-                                SignupActivity.this,
+                                RegisterActivity.this,
                                 LoginActivity.class);
                         startActivity(intent);
                         finish();
@@ -167,7 +167,7 @@ public class SignupActivity extends Activity {
             protected Map<String, String> getParams() {
                 // Posting params to register url
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("tag", AppConfig.REGISTER);
+                params.put("tag", "register");
                 params.put("name", name);
                 params.put("email", email);
                 params.put("password", password);

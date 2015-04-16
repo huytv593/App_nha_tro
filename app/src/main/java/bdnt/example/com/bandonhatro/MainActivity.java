@@ -3,9 +3,12 @@ package bdnt.example.com.bandonhatro;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
+import android.support.v4.app.FragmentManager;
 
 public class MainActivity extends FragmentActivity {
     private FragmentTabHost mTabHost;
+    public static FragmentManager fragmentManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,4 +29,6 @@ public class MainActivity extends FragmentActivity {
                 mTabHost.newTabSpec("tab3").setIndicator("Tùy chọn", getResources().getDrawable(R.drawable.option)),
                 OptionFragment.class, null);
     }
+
+
 }
