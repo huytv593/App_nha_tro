@@ -1,0 +1,133 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:weightSum="1">
+    <EditText
+        android:id="@+id/edtThongtin"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:hint="Thông tin nhà: Giá thuê, diện tích, tiện nghi...."
+        android:height="100dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="1">
+
+        <ImageButton
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src = "@drawable/telefono"
+            android:id="@+id/imageButton" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:text="0988888888"
+            android:textSize="30dp"
+            android:height="100dp"
+            android:id="@+id/textView" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="1" >
+
+        <ImageButton
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/address"
+            android:id="@+id/imageButton3" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:text="Địa chỉ: Hà Nội"
+            android:textSize="20dp"
+            android:height="100dp"
+            android:id="@+id/textView2" />
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/imageView1" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/imageView2" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/imageView3" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/imageView4" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <TableRow
+
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:id="@+id/imageButton2" />
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:gravity="center_vertical"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Back"
+            android:id="@+id/textView3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:gravity="center_vertical"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Xem trên bản đồ"
+            android:id="@+id/textView4" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/forward"
+            android:id="@+id/imageButton4" />
+
+    </TableRow>
+
+
+</LinearLayout>

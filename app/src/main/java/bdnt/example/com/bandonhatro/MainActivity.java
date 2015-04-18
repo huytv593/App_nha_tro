@@ -13,8 +13,8 @@ public class MainActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
+
         mTabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
         mTabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
 
@@ -29,6 +29,5 @@ public class MainActivity extends FragmentActivity {
                 mTabHost.newTabSpec("tab3").setIndicator("Tùy chọn", getResources().getDrawable(R.drawable.option)),
                 OptionFragment.class, null);
     }
-
 
 }

@@ -31,6 +31,7 @@ public class OptionFragment extends Fragment {
 
             }
         });
+
 //        btnDangTin.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -59,13 +60,8 @@ public class OptionFragment extends Fragment {
 //                b.show();
 //            }
 //        });
-//        btnGioiThieu = (Button) v.findViewById(R.id.btnGioiThieu);
-//        btnGioiThieu.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//            }
-//        });
+
+
         return v;
     }
 }
