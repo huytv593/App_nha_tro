@@ -1,6 +1,5 @@
 package bdnt.example.com.bandonhatro;
 
-import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,7 +10,9 @@ import android.widget.Button;
 
 public class OptionFragment extends Fragment {
     Button btnDangTin;
+    Button btnLinkToLoginScreen;
     Button btnGioiThieu;
+    Button btnInfo;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -22,25 +23,33 @@ public class OptionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_option, container, false);
-        btnDangTin = (Button) v.findViewById(R.id.btnDangTin);
-        btnDangTin.setOnClickListener(new View.OnClickListener() {
+        btnLinkToLoginScreen = (Button) v.findViewById(R.id.btnLinkToLoginScreen);
+        btnLinkToLoginScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),LoginActivity.class);
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent);
 
             }
         });
+        btnDangTin = (Button) v.findViewById(R.id.btnNewPost);
+        btnDangTin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), NewPostActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnInfo = (Button) v.findViewById(R.id.btnViewInfo);
+        btnInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), InfoActivity.class);
+                startActivity(intent);
+            }
+        });
 
-//        btnDangTin.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Dialog b = new Dialog(getActivity());
-//                b.setContentView(R.layout.login);
-//                b.setTitle("Đăng nhập");
-//                btnLinkDangKi = (Button) b.findViewById(R.id.btnLinkToRegisterScreen);
-//                btnLinkDangKi.setOnClickListener(new View.OnClickListener() {
-//                    @Override
+//                b.setContentView(R.layout.logi
 //                    public void onClick(View view) {
 //                        final Dialog c = new Dialog(getActivity());
 //                        c.setContentView(R.layout.signup);

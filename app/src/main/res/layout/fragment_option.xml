@@ -1,40 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
     <Button
+        android:id="@+id/btnNewPost"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="left"
-        android:text="Đăng tin"
-        android:id="@+id/btnDangTin" />
+        android:text="Đăng tin" />
 
     <Button
+        android:id="@+id/btnGioiThieu"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="left"
-        android:text="Giới thiệu"
-        android:id="@+id/btnGioiThieu" />
+        android:text="Giới thiệu" />
 
     <Button
+        android:id="@+id/btnHdsd"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="left"
-        android:text="Hướng dẫn sử dụng"
-        android:id="@+id/btnHdsd" />
+        android:text="Hướng dẫn sử dụng" />
 
     <Button
+        android:id="@+id/btnGopY"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Góp ý"
         android:gravity="left"
-        android:id="@+id/btnGopY" />
+        android:text="Góp ý" />
+
+    <Button
+        android:id="@+id/btnLinkToLoginScreen"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Đăng nhập" />
+    <Button
+        android:id="@+id/btnViewInfo"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Xem chi tiết" />
 
 </LinearLayout>

@@ -1,7 +1,13 @@
 package bdnt.example.com.bandonhatro;
 
-/**
- * Created by huytv on 4/19/15.
- */
-public class InfoActivity {
+import android.app.Activity;
+import android.os.Bundle;
+
+public class InfoActivity extends Activity{
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_info);
+
+
+    }
 }
