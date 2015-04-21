@@ -15,4 +15,9 @@
     <string name="btn_logout">Đăng xuất</string>
     <string name="name">Họ tên</string>
 
+    <string name="title_activity_result_search_list">ResultSearchList</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_result_search">Kết quả tìm kiếm</string>
+
 </resources>
