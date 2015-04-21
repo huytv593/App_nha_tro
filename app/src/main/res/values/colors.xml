@@ -14,6 +14,9 @@
     <color name="btn_login_bg">#eceef1</color>
     <color name="lbl_name">#333333</color>
     <color name="btn_logut_bg">#ff6861</color>
+    <color name="spinner_bg">#F0F8FF</color>
+    <color name="fragment_bg">#7FFFD4</color>
+
 
     /* Color for list view */
     <color name="genre">#666666</color>
@@ -23,5 +26,7 @@
     <color name="list_row_end_color">#ffffff</color>
     <color name="list_row_hover_start_color">#ebeef0</color>
     <color name="list_row_hover_end_color">#ebeef0</color>
+
+    <color name="black_overlay">#66000000</color>
 
 </resources>

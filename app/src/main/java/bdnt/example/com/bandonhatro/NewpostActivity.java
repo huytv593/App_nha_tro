@@ -6,8 +6,6 @@ import android.os.Bundle;
 public class NewPostActivity extends Activity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_post);
-
-
+       setContentView(R.layout.activity_new_post);
     }
 }

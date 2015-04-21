@@ -3,22 +3,25 @@ package bdnt.example.com.bandonhatro;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 import android.widget.Button;
+import android.widget.Spinner;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchFragment extends Fragment implements AdapterView.OnItemSelectedListener {
+public class SearchFragment extends Fragment implements AdapterView.OnItemSelectedListener, View.OnClickListener {
     public String thanhpho = null;
     private Spinner town;
     private Spinner huyenSpiner;
     private Spinner phuongSpiner;
+
+
     private Spinner duongSpiner;
     Button btnSearch;
 
@@ -100,7 +103,8 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
         // attaching data adapter to spinner
         giaSpinner.setAdapter(dataAdapter4);
 
-//        btnSearch = (Button) v.findViewById(R.id.btnSearch);
+        btnSearch = (Button) v.findViewById(R.id.btnSearch);
+        btnSearch.setOnClickListener(this);
 //        btnSearch.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -183,4 +187,19 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
         return result;
     }
 
+    @Override
+    public void onClick(View v) {
+        Intent searchIntent = new Intent(getActivity(), ResultSearchActivity.class);
+        ArrayList<String> content = new ArrayList<>();
+        content.add("HaNoi");
+        content.add("TuLiem");
+
+
+        Bundle contentBundle = new Bundle();
+        contentBundle.putStringArrayList("DATA", content);
+        searchIntent.putExtras(contentBundle);
+        getActivity().startActivity(searchIntent);
+
+        Log.i("INFO", "Clicked");
+    }
 }
