@@ -105,14 +105,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
 
         btnSearch = (Button) v.findViewById(R.id.btnSearch);
         btnSearch.setOnClickListener(this);
-//        btnSearch.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getActivity(),ListViewActivity.class);
-//                startActivity(intent);
-//
-//            }
-//        });
+
 
         return v;
     }

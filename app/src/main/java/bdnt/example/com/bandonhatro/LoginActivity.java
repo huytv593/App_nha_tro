@@ -74,7 +74,7 @@ public class LoginActivity extends Activity {
                 } else {
                     // Prompt user to enter credentials
                     Toast.makeText(getApplicationContext(),
-                            "Please enter the credentials!", Toast.LENGTH_LONG)
+                            "Vui lòng nhập đầy đủ các trường!", Toast.LENGTH_LONG)
                             .show();
                 }
             }
@@ -101,11 +101,11 @@ public class LoginActivity extends Activity {
         // Tag used to cancel the request
         String tag_string_req = "req_login";
 
-        pDialog.setMessage("Logging in ...");
+        pDialog.setMessage("Đăng nhập ...");
         showDialog();
 
         StringRequest strReq = new StringRequest(Method.POST,
-                AppConfig.URL_REGISTER, new Response.Listener<String>() {
+                AppConfig.URL_LOGIN, new Response.Listener<String>() {
 
             @Override
             public void onResponse(String response) {
