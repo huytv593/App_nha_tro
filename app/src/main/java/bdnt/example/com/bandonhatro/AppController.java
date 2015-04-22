@@ -5,7 +5,10 @@ import android.text.TextUtils;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
+
+import bdnt.example.com.bandonhatro.VolleyListView.LruBitmapCache;
 
 public class AppController extends Application {
 
@@ -14,6 +17,7 @@ public class AppController extends Application {
     private RequestQueue mRequestQueue;
 
     private static AppController mInstance;
+    private ImageLoader mImageLoader;
 
     @Override
     public void onCreate() {
@@ -48,4 +52,15 @@ public class AppController extends Application {
             mRequestQueue.cancelAll(tag);
         }
     }
+    //
+    public ImageLoader getImageLoader() {
+        getRequestQueue();
+        if (mImageLoader == null) {
+            mImageLoader = new ImageLoader(this.mRequestQueue,
+                    new LruBitmapCache());
+        }
+        return this.mImageLoader;
+    }
+
+
 }

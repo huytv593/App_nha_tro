@@ -19,5 +19,6 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_result_search">Kết quả tìm kiếm</string>
+    <string name="title_activity_list_view_with_volley">ListViewWithVolley</string>
 
 </resources>

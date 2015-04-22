@@ -1,5 +1,6 @@
 package bdnt.example.com.bandonhatro;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,6 +13,8 @@ import android.widget.Spinner;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import bdnt.example.com.bandonhatro.VolleyListView.ListViewWithVolley;
 
 public class SearchFragment extends Fragment implements AdapterView.OnItemSelectedListener, View.OnClickListener {
     public String thanhpho = null;
@@ -180,17 +183,19 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
 
     @Override
     public void onClick(View v) {
-        Intent searchIntent = new Intent(getActivity(), ResultSearchActivity.class);
-        ArrayList<String> content = new ArrayList<>();
-        content.add("HaNoi");
-        content.add("TuLiem");
-
-
-        Bundle contentBundle = new Bundle();
-        contentBundle.putStringArrayList("DATA", content);
-        searchIntent.putExtras(contentBundle);
-        getActivity().startActivity(searchIntent);
-
-        Log.i("INFO", "Clicked");
+//        Intent searchIntent = new Intent(getActivity(), ResultSearchActivity.class);
+//        ArrayList<String> content = new ArrayList<>();
+//        content.add("HaNoi");
+//        content.add("TuLiem");
+//
+//
+//        Bundle contentBundle = new Bundle();
+//        contentBundle.putStringArrayList("DATA", content);
+//        searchIntent.putExtras(contentBundle);
+//        getActivity().startActivity(searchIntent);
+//
+//        Log.i("INFO", "Clicked");
+        Intent intent = new Intent(getActivity(), ListViewWithVolley.class);
+        startActivity(intent);
     }
 }
