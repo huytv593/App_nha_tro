@@ -1,9 +1,7 @@
 package bdnt.example.com.bandonhatro;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -105,14 +103,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
 
         btnSearch = (Button) v.findViewById(R.id.btnSearch);
         btnSearch.setOnClickListener(this);
-//        btnSearch.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getActivity(),ListViewActivity.class);
-//                startActivity(intent);
-//
-//            }
-//        });
+
 
         return v;
     }
