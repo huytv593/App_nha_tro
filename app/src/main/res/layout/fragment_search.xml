@@ -1,5 +1,4 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
@@ -10,10 +9,11 @@
         android:layout_width="250dp"
         android:background="@color/spinner_bg"
         android:gravity="center"
+
         android:layout_marginTop="35dp"
         android:layout_gravity="center"
         android:layout_height="40dp"
-        android:id="@+id/thanhpho_spinner" />
+        android:id="@+id/city_spinner" />
 
     <Spinner
         android:layout_width="250dp"
@@ -22,7 +22,7 @@
         android:layout_marginTop="15dp"
         android:layout_gravity="center"
         android:layout_height="40dp"
-        android:id="@+id/huyen_spinner" />
+        android:id="@+id/district_spinner" />
 
     <Spinner
         android:layout_width="250dp"
@@ -31,7 +31,7 @@
         android:background="@color/spinner_bg"
         android:layout_gravity="center"
         android:layout_height="40dp"
-        android:id="@+id/phuongxa_spinner" />
+        android:id="@+id/precinct_spinner" />
 
     <Spinner
         android:layout_width="250dp"
@@ -40,7 +40,7 @@
         android:layout_marginTop="15dp"
         android:layout_gravity="center"
         android:layout_height="40dp"
-        android:id="@+id/duongpho_spinner" />
+        android:id="@+id/street_spinner" />
 
     <Spinner
         android:layout_width="250dp"
@@ -49,7 +49,7 @@
         android:layout_marginTop="15dp"
         android:layout_gravity="center"
         android:layout_height="40dp"
-        android:id="@+id/dientich_spinner" />
+        android:id="@+id/square_spinner" />
 
     <Spinner
         android:layout_width="250dp"
@@ -58,7 +58,7 @@
         android:background="@color/spinner_bg"
         android:layout_gravity="center"
         android:layout_height="40dp"
-        android:id="@+id/gia_spinner" />
+        android:id="@+id/price_spinner" />
 
     <Button
         android:layout_width="250dp"

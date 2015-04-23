@@ -9,4 +9,11 @@ public class AppConfig {
 
     //
     private static final String URL_MOVIE = "http://api.androidhive.info/json/movies.json";
+
+    public static final String URL_SEARCH="http://timnhatro.huytran.info/nhatros/find";
+    public static final String URL_VIEW="http://timnhatro.huytran.info/nhatros/view";
+    public static final String URL_POST="http://timnhatro.huytran.info/nhatros/post";
+
+
+
 }
