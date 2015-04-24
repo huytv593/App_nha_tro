@@ -3,6 +3,7 @@ package bdnt.example.com.bandonhatro;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -177,7 +178,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
                 switch (position) {
                     case 0:
                         params.put("minSquare", "0");
-                        params.put("maxSquare", "0");
+                        params.put("maxSquare", "");
                         break;
                     case 1:
                         params.put("minSquare", "0");
@@ -197,7 +198,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
                 switch (position) {
                     case 0:
                         params.put("minPrice", "0");
-                        params.put("maxPrice", "0");
+                        params.put("maxPrice", "");
                         break;
                     case 1:
                         params.put("minPrice", "1000");
@@ -312,7 +313,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
         // Tag used to cancel the request
         String tag_string_req = "req_register";
         final ProgressDialog pDialog = new ProgressDialog(getActivity());
-        pDialog.setMessage("Registering ...");
+        pDialog.setMessage("Đang tìm kiếm ...");
         pDialog.show();
 
         StringRequest strReq = new StringRequest(Request.Method.POST,
@@ -320,7 +321,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
 
             @Override
             public void onResponse(String response) {
-                pDialog.hide();
+                Log.d("tag",response.toString());
 
             }
         }, new Response.ErrorListener() {
