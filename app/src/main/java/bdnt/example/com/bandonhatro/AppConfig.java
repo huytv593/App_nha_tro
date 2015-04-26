@@ -13,7 +13,7 @@ public class AppConfig {
     public static final String URL_SEARCH="http://timnhatro.huytran.info/nhatros/find";
     public static final String URL_VIEW="http://timnhatro.huytran.info/nhatros/view";
     public static final String URL_POST="http://timnhatro.huytran.info/nhatros/post";
-
+    public static final String ROOT_URL_IMG="http://timnhatro.huytran.info/uploads/";
 
 
 }

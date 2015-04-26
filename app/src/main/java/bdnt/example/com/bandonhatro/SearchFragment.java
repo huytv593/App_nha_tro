@@ -1,9 +1,8 @@
 package bdnt.example.com.bandonhatro;
 
-import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,15 +12,11 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Map;
+
+import bdnt.example.com.bandonhatro.VolleyListView.RoomListViewActivity;
 
 public class SearchFragment extends Fragment implements AdapterView.OnItemSelectedListener {
     private Spinner citySpinner;
@@ -31,9 +26,9 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
     private Spinner squareSpinner;
     private Spinner priceSpinner;
     Button btnSearch;
-    Map<String, String> dictionary;
-    Map<String, String[]> arrayMap;
-    Map<String, String> params;
+    HashMap<String, String> dictionary;
+    HashMap<String, String[]> arrayMap;
+    HashMap<String, String> params;
     String[] city = {"--Chọn tỉnh/thành phố--", "Hà Nội"};
     String[] hanoi = {"--Chọn quận/quyện--", "Cầu Giấy", "Ba Đình", "Đống Đa"};
     String[] caugiay = {"--Chọn phường/xã--", "Dịch Vọng Hậu", "Mai Dịch", "Dịch Vọng"};
@@ -99,26 +94,15 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //        Intent searchIntent = new Intent(getActivity(), ResultSearchActivity.class);
-//        ArrayList<String> content = new ArrayList<>();
-//        content.add("HaNoi");
-//        content.add("TuLiem");
-//
-//
-//        Bundle contentBundle = new Bundle();
-//        contentBundle.putStringArrayList("DATA", content);
-//        searchIntent.putExtras(contentBundle);
-//        getActivity().startActivity(searchIntent);
-//
-//        Log.i("INFO", "Clicked");
-//        Intent intent = new Intent(getActivity(), ListViewWithVolley.class);
-//        startActivity(intent);
                 String stringParams = ">>" + params.get("city") + " || " + params.get("district") + " || " + params.get("precinct")
                         + " || " + params.get("street") + " || " + params.get("minSquare") + " || " + params.get("maxSquare") + " || "
                         + params.get("minPrice") + " || " + params.get("maxPrice") + "<<";
 
-                Toast.makeText(getActivity(), stringParams, Toast.LENGTH_SHORT).show();
-                searchRequest();
+               Toast.makeText(getActivity(), stringParams, Toast.LENGTH_SHORT).show();
+//                searchRequest();
+                Intent intent = new Intent(getActivity(), RoomListViewActivity.class);
+                intent.putExtra("params",  params);
+                startActivity(intent);
             }
         });
         return v;
@@ -309,42 +293,5 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
 
     }
 
-    private void searchRequest() {
-        // Tag used to cancel the request
-        String tag_string_req = "req_register";
-        final ProgressDialog pDialog = new ProgressDialog(getActivity());
-        pDialog.setMessage("Đang tìm kiếm ...");
-        pDialog.show();
-
-        StringRequest strReq = new StringRequest(Request.Method.POST,
-                AppConfig.URL_SEARCH, new Response.Listener<String>() {
-
-            @Override
-            public void onResponse(String response) {
-                Log.d("tag",response.toString());
-
-            }
-        }, new Response.ErrorListener() {
-
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                pDialog.hide();
-
-            }
-        }) {
-
-            @Override
-            protected Map<String, String> getParams() {
-                // Posting params to register url
-
-
-                return params;
-            }
-
-        };
-
-        // Adding request to request queue
-        AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
-    }
 
 }

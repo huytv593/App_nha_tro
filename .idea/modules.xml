@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/nhatro_1.iml" filepath="$PROJECT_DIR$/nhatro_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app_nhatro.iml" filepath="$PROJECT_DIR$/app_nhatro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/volley/volley.iml" filepath="$PROJECT_DIR$/volley/volley.iml" />
     </modules>
   </component>
 </project>
