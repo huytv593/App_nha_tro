@@ -122,6 +122,7 @@ public class RoomListViewActivity extends ActionBarActivity {
                 return mMap;
             }
 
+
         };
 
 
