@@ -70,16 +70,16 @@ public class RoomListAdapter extends BaseAdapter {
         Log.i("url",room.getImga());
 
         // title
-		title.setText(room.getTitle());
-		
+		title.setText("Tiêu đề: "+room.getTitle());
+
 		// address
-		address.setText("Rating: " + String.valueOf(room.getAddress()));
+		address.setText("Địa chỉ: " + String.valueOf(room.getAddress()));
 		
 		// end at
-		end_at.setText(room.getEnd_at());
+		end_at.setText("Ngày hết hạn: "+room.getEnd_at());
 		
 		// price
-		price.setText(String.valueOf(room.getPrice()));
+		price.setText("Giá trên tháng: "+String.valueOf(room.getPrice()));
 
 		return convertView;
 	}

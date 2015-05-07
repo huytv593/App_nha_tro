@@ -1,47 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="wrap_content">
     <!-- Thumbnail Image -->
     <com.android.volley.toolbox.NetworkImageView
         android:id="@+id/room_thumbnail"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginRight="8dp" />
+        android:layout_marginRight="8dp"
+        android:background="@drawable/ic_launcher"/>
 
     <!-- Room Title -->
     <TextView
+        android:layout_toRightOf="@+id/room_thumbnail"
+        android:layout_alignParentTop="true"
+        android:text="Title"
         android:id="@+id/room_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/thumbnail"
-        android:layout_toRightOf="@+id/thumbnail"
-        android:textSize="@dimen/title"
+
+        android:textSize="@dimen/rating"
         android:textStyle="bold" />
 
     <!-- Address -->
     <TextView
+        android:layout_toRightOf="@+id/room_thumbnail"
+        android:text="Address"
         android:id="@+id/room_address"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/title"
-        android:layout_marginTop="1dip"
-        android:layout_toRightOf="@+id/thumbnail"
-        android:textSize="@dimen/rating" />
+        android:textSize="@dimen/rating"
+        android:layout_below="@+id/room_title"
+
+        />
 
     <!-- end at -->
     <TextView
+        android:layout_toRightOf="@+id/room_thumbnail"
+        android:text="end at"
         android:id="@+id/room_end_at"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rating"
-        android:layout_marginTop="5dp"
-        android:layout_toRightOf="@+id/thumbnail"
+
         android:textColor="@color/genre"
-        android:textSize="@dimen/genre" />
+        android:textSize="@dimen/genre"
+        android:layout_below="@+id/room_address"
+         />
 
     <!-- Price -->
     <TextView
+        android:layout_below="@+id/room_end_at"
+
+        android:text="price"
         android:id="@+id/room_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

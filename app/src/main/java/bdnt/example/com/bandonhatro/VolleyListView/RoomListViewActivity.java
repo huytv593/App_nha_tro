@@ -1,29 +1,24 @@
 package bdnt.example.com.bandonhatro.VolleyListView;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.VolleyLog;
-import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 
 import bdnt.example.com.bandonhatro.AppConfig;
@@ -34,134 +29,94 @@ public class RoomListViewActivity extends ActionBarActivity {
     ListView listView;
     RoomListAdapter adapter;
     ProgressDialog pDialog;
-    ArrayList<Room>roomList;
-    TextView nothing_found,result_title;
-    Button change_to_mapView,size_result;
+    ArrayList<Room> roomList;
+    TextView nothing_found, result_title;
+    Button change_to_mapView, size_result;
+    Map<String, String> params;
+    //String jsonExample="{\"Nhatro\":[{\"id\":\"1\",\"title\":\"Nhà trọ 1\",\"created_by\":\"1\",\"created_at\":\"2015-04-21\",\"end_at\":\"2015-04-29\",\"price\":\"2000\",\"city\":\"Hà Nội\",\"district\":\"Cầu Giấy\",\"precinct\":\"Dịch Vọng Hậu\",\"street\":\"Xuân Thuỷ\",\"address\":\"114 Xuân Thuỷ\",\"area\":\"20\",\"info\":\"nsdasdnasdnsab nbsdnamsn sadas dn\",\"imga\":\"1.jpg\",\"imgb\":\"1.jpg\",\"imgc\":\"1.jpg\",\"imgd\":\"1.jpg\",\"long\":null,\"lat\":null},{\"id\":\"2\",\"title\":\"Nhà trọ 2\",\"created_by\":\"1\",\"created_at\":\"2015-04-22\",\"end_at\":\"2015-04-26\",\"price\":\"3000\",\"city\":\"Hà Nội\",\"district\":\"Cầu Giấy\",\"precinct\":\"Mai Dịch\",\"street\":\"Hồ Tùng Mậu\",\"address\":\"14\",\"area\":\"26\",\"info\":\"đâsdas\",\"imga\":\"1.jpg\",\"imgb\":\"1.jpg\",\"imgc\":\"1.jpg\",\"imgd\":\"1.jpg\",\"long\":null,\"lat\":null},{\"id\":\"3\",\"title\":\"Nhà trọ 3\",\"created_by\":\"1\",\"created_at\":\"2015-04-22\",\"end_at\":\"2015-04-30\",\"price\":\"2300\",\"city\":\"Hà Nội\",\"district\":\"Cầu Giấy\",\"precinct\":\"Mai Dịch\",\"street\":\"Phạm Văn Đồng\",\"address\":\"115\",\"area\":\"23\",\"info\":\"13213123 đấ \",\"imga\":\"1.jpg\",\"imgb\":\"1.jpg\",\"imgc\":\"1.jpg\",\"imgd\":\"1.jpg\",\"long\":null,\"lat\":null},{\"id\":\"4\",\"title\":\"Nhà trọ 4\",\"created_by\":\"1\",\"created_at\":\"2015-04-22\",\"end_at\":\"2015-04-30\",\"price\":\"3200\",\"city\":\"Hà Nội\",\"district\":\"Cầu Giấy\",\"precinct\":\"Mai Dịch\",\"street\":\"Doãn Kế Thiện\",\"address\":\"30\",\"area\":\"30\",\"info\":\"DKLSANDSLAD\",\"imga\":\"1.jpg\",\"imgb\":\"1.jpg\",\"imgc\":\"1.jpg\",\"imgd\":\"1.jpg\",\"long\":null,\"lat\":null},{\"id\":\"5\",\"title\":\"Nhà trọ 5\",\"created_by\":\"1\",\"created_at\":\"2015-04-22\",\"end_at\":\"2015-08-25\",\"price\":\"2000\",\"city\":\"Hà Nội\",\"district\":\"Cầu Giấy\",\"precinct\":\"Dịch Vọng \",\"street\":\"Thành Thái\",\"address\":\"128\",\"area\":\"20\",\"info\":\"dasdsad asd \",\"imga\":\"1.jpg\",\"imgb\":\"1.jpg\",\"imgc\":\"1.jpg\",\"imgd\":\"1.jpg\",\"long\":null,\"lat\":null},{\"id\":\"6\",\"title\":\"Nhà trọ 6\",\"created_by\":\"1\",\"created_at\":\"2015-04-22\",\"end_at\":\"2015-08-30\",\"price\":\"2500\",\"city\":\"Hà Nội\",\"district\":\"Ba Đình\",\"precinct\":\"Đội Cấn \",\"street\":\"Ngọc Hà\",\"address\":\"117\",\"area\":\"20\",\"info\":\"asdsa \",\"imga\":\"1.jpg\",\"imgb\":\"1.jpg\",\"imgc\":\"1.jpg\",\"imgd\":\"1.jpg\",\"long\":null,\"lat\":null},{\"id\":\"7\",\"title\":\"Nhà trọ 7\",\"created_by\":\"1\",\"created_at\":\"2015-04-22\",\"end_at\":\"2015-08-27\",\"price\":\"2400\",\"city\":\"Hà Nội\",\"district\":\"Đống Đa\",\"precinct\":\"Láng Thượng\",\"street\":\"Pháo Đài Láng\",\"address\":\"23\",\"area\":\"20\",\"info\":\"dksnladnsald\",\"imga\":\"1.jpg\",\"imgb\":\"1.jpg\",\"imgc\":\"1.jpg\",\"imgd\":\"1.jpg\",\"long\":null,\"lat\":null},{\"id\":\"8\",\"title\":\"Nhà trọ 8\",\"created_by\":\"1\",\"created_at\":\"2015-04-22\",\"end_at\":\"2015-08-29\",\"price\":\"2400\",\"city\":\"Hà Nội\",\"district\":\"Đống Đa\",\"precinct\":\"Láng Hạ\",\"street\":\"Huỳnh Thúc Kháng\",\"address\":\"132\",\"area\":\"20\",\"info\":\"jdsald.jpg\",\"imga\":\"1.jpg\",\"imgb\":\"1.jpg\",\"imgc\":\"1.jpg\",\"imgd\":\"1.jpg\",\"long\":null,\"lat\":null}]}";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        init();
+        searchRequest();
+
+
+    }
+
+
+    private void init() {
         setContentView(R.layout.activity_room_list_view);
-        Intent intent = getIntent();
-        final HashMap<String, String> params = (HashMap<String, String>)intent.getSerializableExtra("params");
-        String stringParams = ">>" + params.get("city") + " || " + params.get("district") + " || " + params.get("precinct")
-                + " || " + params.get("street") + " || " + params.get("minSquare") + " || " + params.get("maxSquare") + " || "
-                + params.get("minPrice") + " || " + params.get("maxPrice") + "<<";
-        Log.i("params",stringParams);
+
+        params = (Map) getIntent().getSerializableExtra("params");
+        Log.d("result screen params", Integer.toString(params.size()));
 
         listView = (ListView) findViewById(R.id.roomList);
-        roomList=new ArrayList<>();
-        adapter = new RoomListAdapter(RoomListViewActivity.this, roomList);
-        listView.setAdapter(adapter);
-        nothing_found=(TextView)findViewById(R.id.nothing_found);
-        result_title=(TextView)findViewById(R.id.result_title);
-        change_to_mapView=(Button)findViewById(R.id.change_to_mapView);
-        size_result=(Button)findViewById(R.id.size_result);
+
+        nothing_found = (TextView) findViewById(R.id.nothing_found);
+        result_title = (TextView) findViewById(R.id.result_title);
+        change_to_mapView = (Button) findViewById(R.id.change_to_mapView);
+        size_result = (Button) findViewById(R.id.size_result);
 
         pDialog = new ProgressDialog(this);
-        // Showing progress dialog before making http request
         pDialog.setMessage("Loading...");
+        pDialog.setCancelable(false);
         pDialog.show();
-        JsonArrayRequest movieReq = new JsonArrayRequest(Request.Method.POST,AppConfig.URL_SEARCH,null,
-                new Response.Listener<JSONArray>() {
-                    @Override
-                    public void onResponse(JSONArray response) {
-                        Log.d("respone", response.toString()+" // "+response.length());
-                        hidePDialog();
-                        if(response.length()==0){
-                            listView.setVisibility(View.GONE);
-                            nothing_found.setVisibility(View.INVISIBLE);
-                            change_to_mapView.setVisibility(View.GONE);
-                            size_result.setVisibility(View.GONE);
-                            result_title.setVisibility(View.GONE);
-                        }else {
-                            // Parsing json
-                            for (int i = 0; i < response.length(); i++) {
-                                try {
 
-                                    JSONObject obj = response.getJSONObject(i);
-                                    Room room = new Room();
-                                    room.setTitle(obj.getString("title"));
-                                    room.setImga(obj.getString("image"));
-                                    room.setAddress(obj.getString("address"));
-                                    room.setPrice(obj.getString("price"));
-                                    // adding room to rooms array
-                                    roomList.add(room);
+    }
 
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-
-                            }
-
-                            // notifying list adapter about data changes
-                            // so that it renders the list view with updated data
-                            adapter.notifyDataSetChanged();
-                        }
+    private void searchRequest() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, AppConfig.URL_SEARCH, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                pDialog.hide();
+                Toast.makeText(RoomListViewActivity.this, response, Toast.LENGTH_SHORT).show();
+//                Gson gson = new Gson();
+//
+//                JsonParser jsonParser= new JsonParser();
+//                JsonArray roomArray= jsonParser.parse(response).getAsJsonArray();
+                roomList= new ArrayList<>();
+//                for (JsonElement aRoom: roomArray){
+//                    Room room = gson.fromJson(aRoom,Room.class);
+//                    roomList.add(room);
+//                }
+//                Log.d("Test parse json array",roomList.get(0).toString());
+                try {
+                    JSONObject jsonObject= new JSONObject(response);
+                    JSONArray jsonArray= jsonObject.getJSONArray("Nhatro");
+                    for (int i=0;i<jsonArray.length();i++){
+                        JSONObject object = jsonArray.getJSONObject(i);
+                        Room room = new Room();
+                        room.setAddress(object.getString("address"));
+                        room.setImga(object.getString("imga"));
+                        room.setTitle(object.getString("title"));
+                        room.setPrice(object.getString("price"));
+                        room.setEnd_at(object.getString("end_at"));
+                        roomList.add(room);
                     }
-                }, new Response.ErrorListener() {
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                adapter = new RoomListAdapter(RoomListViewActivity.this, roomList);
+                listView.setAdapter(adapter);
+
+            }
+        }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                VolleyLog.d("Error",  error.getMessage());
-                hidePDialog();
-
+                Toast.makeText(RoomListViewActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
-        }){
-
+        }
+        ) {
             @Override
             protected Map<String, String> getParams() {
-                // Posting params to register url
-                Map<String,String>mMap=new HashMap<>();
-                mMap.put("city", params.get("city"));
-                mMap.put("district", params.get("district"));
-                mMap.put("precinct",params.get("precinct"));
-                mMap.put("street", params.get("street"));
-                mMap.put("minSquare", params.get("minSquare"));
-                mMap.put("maxSquare", params.get("maxSquare"));
-                mMap.put("minPrice", params.get("minPrice"));
-                mMap.put("maxPrice", params.get("maxPrice"));
-                return mMap;
+
+
+                return params;
             }
-
-
         };
-
-
-        // Adding request to request queue
-        AppController.getInstance().addToRequestQueue(movieReq);
-
+        AppController.getInstance().addToRequestQueue(stringRequest);
     }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        hidePDialog();
-    }
 
-    private void hidePDialog() {
-        if (pDialog != null) {
-            pDialog.dismiss();
-            pDialog = null;
-        }
-    }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_room_list_view, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }

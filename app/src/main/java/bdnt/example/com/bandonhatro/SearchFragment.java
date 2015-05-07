@@ -1,5 +1,6 @@
 package bdnt.example.com.bandonhatro;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,7 +11,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -25,6 +25,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
     private Spinner streetSpinner;
     private Spinner squareSpinner;
     private Spinner priceSpinner;
+    private ProgressDialog pDialog;
     Button btnSearch;
     HashMap<String, String> dictionary;
     HashMap<String, String[]> arrayMap;
@@ -63,6 +64,10 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        pDialog = new ProgressDialog(getActivity());
+        pDialog.setMessage("Máy chủ đang tìm kiếm, xin vui lòng đợi!");
+        pDialog.setIndeterminate(false);
+        pDialog.setCancelable(true);
         View v = inflater.inflate(R.layout.fragment_search, container, false);
         initData();
         citySpinner = (Spinner) v.findViewById(R.id.city_spinner);
@@ -94,15 +99,12 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String stringParams = ">>" + params.get("city") + " || " + params.get("district") + " || " + params.get("precinct")
-                        + " || " + params.get("street") + " || " + params.get("minSquare") + " || " + params.get("maxSquare") + " || "
-                        + params.get("minPrice") + " || " + params.get("maxPrice") + "<<";
 
-               Toast.makeText(getActivity(), stringParams, Toast.LENGTH_SHORT).show();
-//                searchRequest();
+
                 Intent intent = new Intent(getActivity(), RoomListViewActivity.class);
-                intent.putExtra("params",  params);
+                intent.putExtra("params", params);
                 startActivity(intent);
+
             }
         });
         return v;

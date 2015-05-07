@@ -22,8 +22,6 @@ public class Room {
     private String imgb;
     private String imgc;
     private String imgd;
-    private String longitude;
-    private String latitude;
 
     public Room() {
     }
@@ -69,7 +67,7 @@ public class Room {
     }
 
     public String getPrice() {
-        return price;
+        return price+"000 vnd";
     }
 
     public void setPrice(String price) {
@@ -156,19 +154,11 @@ public class Room {
         this.imgd = imgd;
     }
 
-    public String getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(String longitude) {
-        this.longitude = longitude;
-    }
-
-    public String getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(String latitude) {
-        this.latitude = latitude;
+    @Override
+    public String toString() {
+        return "Room{" +
+                "id='" + id + '\'' +
+                ", title='" + title + '\'' +
+                '}';
     }
 }
