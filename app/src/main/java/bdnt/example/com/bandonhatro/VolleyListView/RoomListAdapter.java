@@ -70,7 +70,7 @@ public class RoomListAdapter extends BaseAdapter {
         Log.i("url",room.getImga());
 
         // title
-		title.setText("Tiêu đề: "+room.getTitle());
+		title.setText(room.getTitle());
 
 		// address
 		address.setText("Địa chỉ: " + String.valueOf(room.getAddress()));
@@ -79,7 +79,7 @@ public class RoomListAdapter extends BaseAdapter {
 		end_at.setText("Ngày hết hạn: "+room.getEnd_at());
 		
 		// price
-		price.setText("Giá trên tháng: "+String.valueOf(room.getPrice()));
+		price.setText("Giá: "+String.valueOf(room.getPrice()));
 
 		return convertView;
 	}

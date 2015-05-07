@@ -10,10 +10,10 @@ public class AppConfig {
     //
     private static final String URL_MOVIE = "http://api.androidhive.info/json/movies.json";
 
-    public static final String URL_SEARCH="http://timnhatro.huytran.info/nhatros/find";
+    public static final String URL_SEARCH="http://timnhatro.huytran.info/nhatros/api_find";
     public static final String URL_VIEW="http://timnhatro.huytran.info/nhatros/view";
     public static final String URL_POST="http://timnhatro.huytran.info/nhatros/post";
-    public static final String ROOT_URL_IMG="http://timnhatro.huytran.info/uploads/";
+    public static final String ROOT_URL_IMG="http://timnhatro.huytran.info/upload/";
     public static final String TAG_ROOM="Nhatro";
 
 

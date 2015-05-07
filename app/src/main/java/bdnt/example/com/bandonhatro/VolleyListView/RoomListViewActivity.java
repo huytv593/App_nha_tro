@@ -40,7 +40,7 @@ public class RoomListViewActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         init();
         searchRequest();
-
+        getSupportActionBar().hide();
 
     }
 
@@ -104,7 +104,8 @@ public class RoomListViewActivity extends ActionBarActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(RoomListViewActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(RoomListViewActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.d("ssss" , error.getMessage());
             }
         }
         ) {
