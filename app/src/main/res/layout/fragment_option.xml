@@ -7,51 +7,51 @@
     android:orientation="vertical">
 
 
-    <Button
+    <TextView
         android:id="@+id/btnNewPost"
-        style="?android:attr/buttonStyleSmall"
+android:background="#E0F2F1"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="left"
+        android:layout_height="40dp"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="5dp"
         android:text="Đăng tin" />
+    <TextView
+        android:id="@+id/btnLinkToLoginScreen"
 
-    <Button
-        android:id="@+id/btnGioiThieu"
-        style="?android:attr/buttonStyleSmall"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="left"
+        android:layout_height="40dp"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="5dp"
+
+        android:text="Đăng nhập" />
+
+    <TextView
+        android:id="@+id/btnGioiThieu"
+        android:background="#E0F2F1"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="5dp"
         android:text="Giới thiệu" />
 
-    <Button
+    <TextView
         android:id="@+id/btnHdsd"
-        style="?android:attr/buttonStyleSmall"
+
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="left"
+        android:layout_height="40dp"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="5dp"
         android:text="Hướng dẫn sử dụng" />
 
-    <Button
+    <TextView
         android:id="@+id/btnGopY"
-        style="?android:attr/buttonStyleSmall"
+        android:background="#E0F2F1"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="left"
+        android:layout_height="40dp"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="5dp"
         android:text="Góp ý" />
 
-    <Button
-        android:id="@+id/btnLinkToLoginScreen"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Đăng nhập" />
-    <Button
-        android:id="@+id/btnViewInfo"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Xem chi tiết" />
+
 
 </LinearLayout>

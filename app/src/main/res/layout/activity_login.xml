@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@color/bg_login"
@@ -43,7 +44,8 @@
  
         <!-- Login Button -->
  
-        <Button
+        <com.rey.material.widget.Button
+            app:rd_enable="true"
             android:id="@+id/btnLogin"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -54,7 +56,8 @@
  
         <!-- Link to Login Screen -->
  
-        <Button
+        <com.rey.material.widget.Button
+            app:rd_enable="true"
             android:id="@+id/btnLinkToRegisterScreen"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

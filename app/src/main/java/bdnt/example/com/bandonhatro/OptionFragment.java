@@ -6,13 +6,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.TextView;
 
 public class OptionFragment extends Fragment {
-    Button btnDangTin;
-    Button btnLinkToLoginScreen;
-    Button btnGioiThieu;
-    Button btnInfo;
+    TextView btnDangTin;
+    TextView btnLinkToLoginScreen;
+    TextView btnGioiThieu;
+    TextView btnInfo;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,7 @@ public class OptionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_option, container, false);
-        btnLinkToLoginScreen = (Button) v.findViewById(R.id.btnLinkToLoginScreen);
+        btnLinkToLoginScreen = (TextView) v.findViewById(R.id.btnLinkToLoginScreen);
         btnLinkToLoginScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,7 +32,7 @@ public class OptionFragment extends Fragment {
 
             }
         });
-        btnDangTin = (Button) v.findViewById(R.id.btnNewPost);
+        btnDangTin = (TextView) v.findViewById(R.id.btnNewPost);
         btnDangTin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,14 +40,7 @@ public class OptionFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        btnInfo = (Button) v.findViewById(R.id.btnViewInfo);
-        btnInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), InfoActivity.class);
-                startActivity(intent);
-            }
-        });
+
 
 //                b.setContentView(R.layout.logi
 //                    public void onClick(View view) {

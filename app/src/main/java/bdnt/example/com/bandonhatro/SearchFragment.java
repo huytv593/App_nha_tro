@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -55,6 +56,8 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
     ArrayAdapter<String> streetStringArrayAdapter;
     ArrayAdapter<String> squareStringArrayAdapter;
     ArrayAdapter<String> priceStringArrayAdapter;
+    TextView advanceSearch;
+    int check;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,6 +73,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
         pDialog.setCancelable(true);
         View v = inflater.inflate(R.layout.fragment_search, container, false);
         initData();
+        check=0;
         citySpinner = (Spinner) v.findViewById(R.id.city_spinner);
         districtSpinner = (Spinner) v.findViewById(R.id.district_spinner);
         precinctSpinner = (Spinner) v.findViewById(R.id.precinct_spinner);
@@ -82,9 +86,12 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
         streetStringArrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, streetList);
         squareStringArrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, squareList);
         priceStringArrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, priceList);
+        advanceSearch=(TextView)v.findViewById(R.id.advanceSearch);
         citySpinner.setAdapter(cityStringArrayAdapter);
         districtSpinner.setAdapter(districtStringArrayAdapter);
         precinctSpinner.setAdapter(precinctStringArrayAdapter);
+        precinctSpinner.setVisibility(View.GONE);
+        streetSpinner.setVisibility(View.GONE);
         streetSpinner.setAdapter(streetStringArrayAdapter);
         squareSpinner.setAdapter(squareStringArrayAdapter);
         priceSpinner.setAdapter(priceStringArrayAdapter);
@@ -94,6 +101,25 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
         streetSpinner.setOnItemSelectedListener(this);
         squareSpinner.setOnItemSelectedListener(this);
         priceSpinner.setOnItemSelectedListener(this);
+        precinctSpinner.setVisibility(View.GONE);
+        streetSpinner.setVisibility(View.GONE);
+        advanceSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              if(check!=1){
+                  precinctSpinner.setVisibility(View.VISIBLE);
+                  streetSpinner.setVisibility(View.VISIBLE);
+                  advanceSearch.setText("Ẩn Tìm Kiếm Nâng Cao");
+                  check=1;
+
+              }else {
+                  precinctSpinner.setVisibility(View.GONE);
+                  streetSpinner.setVisibility(View.GONE);
+                  advanceSearch.setText("Tìm Kiếm Nâng Cao");
+                  check=0;
+              }
+            }
+        });
 
         btnSearch = (Button) v.findViewById(R.id.btnSearch);
         btnSearch.setOnClickListener(new View.OnClickListener() {
