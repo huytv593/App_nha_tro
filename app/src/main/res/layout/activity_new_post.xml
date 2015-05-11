@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
 
@@ -16,11 +17,11 @@
 
         <ImageView
             android:layout_marginLeft="10dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginRight="5dp"
             android:id="@+id/imvBack"
-            android:background="@drawable/ic_launcher"
+            android:background="@drawable/pre"
             />
         <TextView
             android:layout_width="wrap_content"
@@ -36,9 +37,9 @@
             android:layout_weight="1"
             android:layout_height="wrap_content">
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/ic_launcher"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/upload"
 
             android:id="@+id/imvPost" />
         <TextView
@@ -52,6 +53,11 @@
             android:id="@+id/txtPost" />
     </TableRow>
     </TableRow>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#00796B"/>
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -59,30 +65,39 @@
         <ImageView
             android:layout_width="0dp"
             android:scaleType="fitXY"
+            android:layout_marginLeft="30dp"
             android:layout_weight="1"
             android:layout_height="50dp"
-            android:background="@drawable/ic_launcher"/>
+            android:background="@drawable/camera"
+            android:id="@+id/imv1" />
         <ImageView
             android:layout_width="0dp"
+            android:layout_marginLeft="30dp"
             android:scaleType="fitXY"
             android:layout_weight="1"
             android:layout_height="50dp"
-            android:background="@drawable/ic_launcher"/>
+            android:background="@drawable/camera"/>
         <ImageView
             android:layout_width="0dp"
             android:scaleType="fitXY"
+            android:layout_marginLeft="30dp"
             android:layout_weight="1"
             android:layout_height="50dp"
-            android:background="@drawable/ic_launcher"/>
+            android:background="@drawable/camera"/>
         <ImageView
             android:layout_width="0dp"
             android:scaleType="fitXY"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
             android:layout_weight="1"
             android:layout_height="50dp"
-            android:background="@drawable/ic_launcher"/>
+            android:background="@drawable/camera"/>
 
     </LinearLayout>
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#00796B"/>
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="25dp"
@@ -92,7 +107,10 @@
         android:text="Thông tin cơ bản"
 
         android:id="@+id/textView" />
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#00796B"/>
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
@@ -102,11 +120,12 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
+            android:paddingTop="2dp"
             android:layout_height="0dp"
             android:layout_weight="1">
 
             <TextView
-                android:layout_width="200dp"
+                android:layout_width="150dp"
                 android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Tỉnh/Thành phố"
@@ -115,7 +134,9 @@
                 android:id="@+id/textView3" />
 
             <Spinner
-                android:layout_width="wrap_content"
+                android:background="#FFFFFF"
+
+                android:layout_width="200dp"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:id="@+id/spinner2" />
@@ -123,12 +144,13 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
+            android:paddingTop="2dp"
             android:layout_height="0dp"
             android:layout_weight="1"
             >
 
             <TextView
-                android:layout_width="200dp"
+                android:layout_width="150dp"
                 android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Quận/Huyện"
@@ -137,7 +159,8 @@
                 android:id="@+id/textView4" />
 
             <Spinner
-                android:layout_width="wrap_content"
+                android:background="#FFFFFF"
+                android:layout_width="200dp"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:id="@+id/spQuanhuyen" />
@@ -145,11 +168,12 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
+            android:paddingTop="2dp"
             android:layout_height="0dp"
             android:layout_weight="1">
 
             <TextView
-                android:layout_width="200dp"
+                android:layout_width="150dp"
                 android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Phường/Xã"
@@ -158,19 +182,21 @@
                 android:id="@+id/textView5" />
 
             <Spinner
-                android:layout_width="wrap_content"
+                android:background="#FFFFFF"
+                android:layout_width="200dp"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:id="@+id/spPhuongxa" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
+            android:paddingTop="2dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
 
             <TextView
-                android:layout_width="200dp"
+                android:layout_width="150dp"
                 android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Đường/Phố"
@@ -179,7 +205,8 @@
                 android:id="@+id/textView6" />
 
             <Spinner
-                android:layout_width="wrap_content"
+                android:background="#FFFFFF"
+                android:layout_width="200dp"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:id="@+id/spDuongpho" />
@@ -188,11 +215,12 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
+            android:paddingTop="2dp"
             android:layout_height="0dp"
             android:layout_weight="1">
 
             <TextView
-                android:layout_width="200dp"
+                android:layout_width="150dp"
                 android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Diện tích"
@@ -201,7 +229,10 @@
                 android:id="@+id/textView8" />
 
             <EditText
-                android:layout_width="fill_parent"
+                android:layout_width="200dp"
+
+                android:background="#FFFFFF"
+
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:id="@+id/edtDientich" />
@@ -209,11 +240,12 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
+            android:paddingTop="2dp"
             android:layout_height="0dp"
             android:layout_weight="1">
 
             <TextView
-                android:layout_width="200dp"
+                android:layout_width="150dp"
                 android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Giá cho thuê"
@@ -222,19 +254,21 @@
                 android:id="@+id/textView2" />
 
             <EditText
-                android:layout_width="fill_parent"
+                android:layout_width="200dp"
+                android:background="#FFFFFF"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:id="@+id/edtGia" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
+            android:paddingTop="2dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
 
             <TextView
-                android:layout_width="200dp"
+                android:layout_width="150dp"
                 android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Ngày hết hạn"
@@ -243,13 +277,18 @@
                 android:id="@+id/txt2" />
 
             <EditText
-                android:layout_width="fill_parent"
+                android:layout_width="200dp"
+                android:background="#FFFFFF"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:id="@+id/edtNgayhh" />
         </LinearLayout>
 
     </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#00796B"/>
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="25dp"
@@ -259,23 +298,35 @@
         android:text="Thông tin liên hệ"
 
         android:id="@+id/txt3" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#00796B"/>
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:inputType="phone"
         android:hint="0988888888"
         android:textStyle="italic"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
         android:alpha="0.8"
         android:id="@+id/edtSdt" />
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
         android:hint="email@gmail.com"
+        android:background="#FFFFFF"
         android:textStyle="italic"
         android:inputType="textEmailAddress"
         android:alpha="0.8"
         android:id="@+id/edtEmail" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#00796B"/>
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="25dp"
@@ -286,11 +337,17 @@
         android:text="Mô tả chi tiết"
 
         android:id="@+id/txt" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#00796B"/>
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="100dp"
         android:textStyle="italic"
+        android:gravity="top|left"
+        android:background="#FFFFFF"
         android:alpha="0.8"
         android:hint="Có nóng lạnh tiện nghi đầy đủ,...."
         android:id="@+id/edtMota" />
