@@ -34,7 +34,7 @@ public class NewPostActivity extends Activity implements AdapterView.OnItemSelec
     String[] dichvonghau = {"--Ch?n ???ng ph?--", "Xuân Th?y","Ph?m Hùng"};
     String[] maidich = {"--Ch?n ???ng ph?--", "H? Tùng M?u", "Ph?m V?n ??ng", "Doãn K? Thi?n"};
     String[] dichvong = {"--Ch?n ???ng ph?--", "Thành Thái"};
-    String[] doican = {"--Ch?n ???ng ph?--", "Ng?cc Hà"};
+    String[] doican = {"--Ch?n ???ng ph?--", "Ng?c Hà"};
     String[] langthuong = {"--Ch?n ???ng ph?--", "Pháo ?ài Láng"};
     String[] langha = {"--Ch?n ???ng ph?--", "Hu?nh Thúc Kháng"};
 

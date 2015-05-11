@@ -4,69 +4,100 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context=".MainActivity"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp"
     android:weightSum="1">
-    <TextView
-        android:id="@+id/tvGia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textSize="40dp"
-
-
-        android:textStyle="bold"
-        android:gravity="top"
-        android:text="2.1 triệu/tháng"
-        />
-
-    <TableRow
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        android:background="#FFFFFF"
         android:layout_height="match_parent">
         <TextView
-            android:id="@+id/tvDientich"
+            android:id="@+id/tvGia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:textSize="20dp"
-            android:text="20 m2"
+            android:layout_marginTop="20dp"
+            android:textSize="40dp"
+
+
+            android:textStyle="bold"
+            android:gravity="top"
+            android:text="2.1 triệu/tháng"
             />
 
-    </TableRow>
-
-    <TableRow
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-        <TextView
-            android:id="@+id/tvDuongdi"
+        <TableRow
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvDientich"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="Diện tích : 20m2"
+                />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvDuongdi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="Số nhà 15, ngách 25, ngõ 175, đường Cầu Giấy, Hà Nội."
+                />
+
+
+        </TableRow>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="5dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:text="Số nhà 15, ngách 25, ngõ 175, đường Cầu Giấy, Hà Nội."
-            />
+            android:text="Tiện nghi : Có điều hòa, ban công, khu nấu ăn riêng........"
+            android:id="@+id/textView7" />
 
+    </LinearLayout>
 
-    </TableRow>
 
     <TableRow
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:paddingTop="5dp"
+        android:background="#FFFFFF"
+        android:layout_height="wrap_content">
+
 
         <TextView
-            android:layout_marginTop="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="80dp"
+
+            android:layout_width="250dp"
+            android:layout_height="60dp"
             android:gravity="center_vertical"
 
+
+            android:textStyle="bold"
             android:layout_alignParentRight="true"
-            android:text="Liên hệ:
- 0988 888 888"
+            android:text="Liên hệ:0988 888 888"
             android:textSize="20dp"
             android:height="80dp"
             android:id="@+id/textView" />
         <ImageButton
-            android:layout_marginLeft="@dimen/abc_action_bar_stacked_tab_max_width"
-            android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp"
+
+            android:scaleType="fitXY"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:src = "@drawable/telefono"
@@ -77,8 +108,9 @@
     </TableRow>
 
     <TableRow
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_width="match_parent"
+        android:background="#FFFFFF"
+        android:layout_height="30dp">
 
 
         <TextView
@@ -93,133 +125,59 @@
 
 
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:textSize="30dp"
-            android:text="MÔ TẢ THÊM"
-            android:textStyle="bold"
-            android:id="@+id/textView2" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:height="100dp"
-            android:textSize="20dp"
-            android:text="Có sân phơi, nóng lạnh, điện nước đầy đủ kích thước 4m x 5m, có 2 bàn , nhà vệ sinh sạch sẽ..."
-
-            android:id="@+id/tvMota" />
-
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_gravity="center_vertical"
+        android:background="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="160dp">
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="140dp"
+        android:layout_margin="5dp"
+        android:scaleType="fitXY"
+        android:background="@drawable/chungcu2"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:layout_height="140dp"
+            android:scaleType="fitXY"
+            android:background="@drawable/chungcu1"/>
     </LinearLayout>
 
 
-
-    <HorizontalScrollView
-        android:id="@+id/horizontalView"
-        android:layout_height="wrap_content"
-        android:scrollbars="horizontal|vertical"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="5dip">
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/address"
-                android:id="@+id/imageViewa" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/telefono"
-                android:id="@+id/imageView2" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/telefono"
-                android:layout_weight="1"
-                android:id="@+id/imageView4" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/address"
-                android:id="@+id/imageView8" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/address"
-                android:id="@+id/imageView1" />
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/telefono"
-                android:id="@+id/imageView7" />
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/address"
-                android:id="@+id/imageView9" />
-
-        </LinearLayout>
-
-    </HorizontalScrollView>
-
-
-
-
     <TableRow
-
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="40dp"
 
-        android:gravity="bottom"
+        android:gravity="center_vertical"
 
         >
 
 
-        <ImageButton
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/back"
-            android:id="@+id/imageButton2" />
-
         <TextView
-            android:layout_width="120dp"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Back"
             android:id="@+id/textView3" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_marginLeft="30dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Xem trên bản đồ"
             android:id="@+id/textView4" />
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/forward"
-            android:id="@+id/imageButton4" />
 
     </TableRow>
 
