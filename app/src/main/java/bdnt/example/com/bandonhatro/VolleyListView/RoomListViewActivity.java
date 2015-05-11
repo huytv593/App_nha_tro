@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -60,7 +61,7 @@ public class RoomListViewActivity extends ActionBarActivity {
 
         pDialog = new ProgressDialog(this);
         pDialog.setMessage("Loading...");
-        pDialog.setCancelable(false);
+//        pDialog.setCancelable(false);
         pDialog.show();
 
     }
@@ -75,37 +76,57 @@ public class RoomListViewActivity extends ActionBarActivity {
 //
 //                JsonParser jsonParser= new JsonParser();
 //                JsonArray roomArray= jsonParser.parse(response).getAsJsonArray();
-                roomList= new ArrayList<>();
+                roomList = new ArrayList<>();
 //                for (JsonElement aRoom: roomArray){
 //                    Room room = gson.fromJson(aRoom,Room.class);
 //                    roomList.add(room);
 //                }
 //                Log.d("Test parse json array",roomList.get(0).toString());
                 try {
-                    JSONObject jsonObject= new JSONObject(response);
-                    JSONArray jsonArray= jsonObject.getJSONArray("Nhatro");
-                    for (int i=0;i<jsonArray.length();i++){
+                    JSONObject jsonObject = new JSONObject(response);
+                    JSONArray jsonArray = jsonObject.getJSONArray("Nhatro");
+                    for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject object = jsonArray.getJSONObject(i);
                         Room room = new Room();
-                        room.setAddress(object.getString("address"));
-                        room.setImga(object.getString("imga"));
                         room.setTitle(object.getString("title"));
-                        room.setPrice(object.getString("price"));
+                        room.setId(object.getString("id"));
+                        room.setCreate_by(object.getString("created_by"));
+                        room.setCreate_at(object.getString("created_at"));
                         room.setEnd_at(object.getString("end_at"));
+                        room.setPrice(object.getString("price"));
+                        room.setCity(object.getString("city"));
+                        room.setDistrict(object.getString("district"));
+                        room.setPrecinct(object.getString("precinct"));
+                        room.setStreet(object.getString("street"));
+                        room.setAddress(object.getString("address"));
+                        room.setArea(object.getString("area"));
+                        room.setInfo(object.getString("info"));
+                        room.setImga(object.getString("imga"));
+                        room.setImgb(object.getString("imgb"));
+                        room.setImgc(object.getString("imgc"));
+                        room.setImgd(object.getString("imgd"));
                         roomList.add(room);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                adapter = new RoomListAdapter(RoomListViewActivity.this, roomList);
-                listView.setAdapter(adapter);
 
+                if (roomList.size() != 0) {
+                    size_result.setVisibility(View.VISIBLE);
+                    change_to_mapView.setVisibility(View.VISIBLE);
+                    listView.setVisibility(View.VISIBLE);
+                    adapter = new RoomListAdapter(RoomListViewActivity.this, roomList);
+                    listView.setAdapter(adapter);
+                    size_result.setText("Tìm được " + Integer.toString(roomList.size()) + " phòng");
+                } else {
+                    nothing_found.setVisibility(View.VISIBLE);
+                }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
 //                Toast.makeText(RoomListViewActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-                Log.d("ssss" , error.getMessage());
+//                 Log.d("ssss", error.getMessage());
             }
         }
         ) {

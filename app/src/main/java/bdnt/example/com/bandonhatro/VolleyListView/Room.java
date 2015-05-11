@@ -14,6 +14,9 @@ public class Room {
     private String price;
     private String city;
     private String district;
+
+
+    private String precinct;
     private String street;
     private String address;
     private String area;
@@ -148,6 +151,14 @@ public class Room {
 
     public String getImgd() {
         return AppConfig.ROOT_URL_IMG+imgd;
+    }
+
+    public String getPrecinct() {
+        return precinct;
+    }
+
+    public void setPrecinct(String precinct) {
+        this.precinct = precinct;
     }
 
     public void setImgd(String imgd) {

@@ -75,7 +75,11 @@
             android:name=".VolleyListView.RoomListViewActivity"
             android:label="@string/title_activity_room_list_view"
             android:launchMode="singleTop"
-            android:windowSoftInputMode="adjustPan">
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name=".room_details"
+            android:label="@string/title_activity_room_details" >
         </activity>
     </application>
 

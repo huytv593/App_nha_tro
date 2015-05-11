@@ -36,7 +36,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemSelect
     String[] caugiay = {"--Chọn phường/xã--", "Dịch Vọng Hậu", "Mai Dịch", "Dịch Vọng"};
     String[] badinh = {"--Chọn phường/xã--", "Đội Cấn"};
     String[] dongda = {"--Chọn phường/xã--", "Láng Thượng", "Láng Hạ"};
-    String[] dichvonghau = {"--Chọn đường phố--", "Xuân Thủy"};
+    String[] dichvonghau = {"--Chọn đường phố--", "Xuân Thủy","impossible to find"};
     String[] maidich = {"--Chọn đường phố--", "Hồ Tùng Mậu", "Phạm Văn Đồng", "Doãn Kế Thiện"};
     String[] dichvong = {"--Chọn đường phố--", "Thành Thái"};
     String[] doican = {"--Chọn đường phố--", "Ngọc Hà"};
