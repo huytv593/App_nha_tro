@@ -1,11 +1,15 @@
 package bdnt.example.com.bandonhatro;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,6 +20,8 @@ public class NewPostActivity extends Activity implements AdapterView.OnItemSelec
     private Spinner districtSpinner;
     private Spinner precinctSpinner;
     private Spinner streetSpinner;
+    ImageView imvPost;
+    TextView txtPost;
 
     HashMap<String, String> dictionary;
     HashMap<String, String[]> arrayMap;
@@ -50,7 +56,8 @@ public class NewPostActivity extends Activity implements AdapterView.OnItemSelec
         districtSpinner = (Spinner) findViewById(R.id.spQuanhuyen);
         precinctSpinner = (Spinner) findViewById(R.id.spPhuongxa);
         streetSpinner = (Spinner) findViewById(R.id.spDuongpho);
-
+imvPost=(ImageView)findViewById(R.id.imvPost);
+        txtPost=(TextView)findViewById(R.id.txtPost);
         cityStringArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, cityList);
         districtStringArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, districtList);
         precinctStringArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, precinctList);
@@ -66,7 +73,42 @@ public class NewPostActivity extends Activity implements AdapterView.OnItemSelec
         districtSpinner.setOnItemSelectedListener(this);
         precinctSpinner.setOnItemSelectedListener(this);
         streetSpinner.setOnItemSelectedListener(this);
+        imvPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(NewPostActivity.this);
+                builder1.setMessage("??ng tin thành công.");
+                builder1.setCancelable(true);
+                builder1.setPositiveButton("Oke.",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
 
+
+                AlertDialog alert11 = builder1.create();
+                alert11.show();
+            }
+        });
+        txtPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(NewPostActivity.this);
+                builder1.setMessage("??ng tin thành công.");
+                builder1.setCancelable(true);
+                builder1.setPositiveButton("Oke.",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+
+                AlertDialog alert11 = builder1.create();
+                alert11.show();
+            }
+        });
 
     }
     @Override
