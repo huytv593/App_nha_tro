@@ -2,42 +2,91 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
 
+    android:weightSum="1">
+    <TableRow
+        android:layout_width="match_parent"
+        android:background="@color/tab_bg"
+        android:layout_height="wrap_content">
+    <TableRow
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:gravity="left"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="5dp"
+            android:id="@+id/imvBack"
+            android:background="@drawable/ic_launcher"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Đăng tin nhà trọ"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:id="@+id/txtBack" />
+    </TableRow>
+        <TableRow
+            android:layout_width="0dp"
+            android:gravity="right"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_launcher"
+
+            android:id="@+id/imvPost" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Đăng tin"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="30dp"
+            android:gravity="center"
+            android:id="@+id/txtPost" />
+    </TableRow>
+    </TableRow>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
+        <ImageView
+            android:layout_width="0dp"
+            android:scaleType="fitXY"
             android:layout_weight="1"
-            android:id="@+id/imageButton" />
-
-        <ImageButton
-            android:layout_width="wrap_content"
             android:layout_height="50dp"
+            android:background="@drawable/ic_launcher"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:scaleType="fitXY"
             android:layout_weight="1"
-            android:id="@+id/imageButton2" />
-
-        <ImageButton
-            android:layout_width="wrap_content"
             android:layout_height="50dp"
+            android:background="@drawable/ic_launcher"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:scaleType="fitXY"
             android:layout_weight="1"
-            android:id="@+id/imageButton3" />
-
-        <ImageButton
-            android:layout_width="wrap_content"
             android:layout_height="50dp"
+            android:background="@drawable/ic_launcher"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:scaleType="fitXY"
             android:layout_weight="1"
-            android:id="@+id/imageButton4" />
+            android:layout_height="50dp"
+            android:background="@drawable/ic_launcher"/>
+
     </LinearLayout>
 
     <TextView
         android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:background="#666666"
+        android:layout_height="25dp"
+        android:background="@color/tab_bg"
         android:gravity="center_vertical"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Thông tin cơ bản"
@@ -48,17 +97,17 @@
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="209dp"
-        android:layout_weight="0.08">
+        >
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="1">
 
             <TextView
                 android:layout_width="200dp"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Tỉnh/Thành phố"
                 android:gravity="center_vertical"
@@ -67,20 +116,20 @@
 
             <Spinner
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:id="@+id/spinner2" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="1"
             >
 
             <TextView
                 android:layout_width="200dp"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Quận/Huyện"
                 android:gravity="center_vertical"
@@ -89,19 +138,19 @@
 
             <Spinner
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:id="@+id/spQuanhuyen" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="1">
 
             <TextView
                 android:layout_width="200dp"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Phường/Xã"
                 android:gravity="center_vertical"
@@ -110,19 +159,19 @@
 
             <Spinner
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:id="@+id/spPhuongxa" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="1">
 
             <TextView
                 android:layout_width="200dp"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Đường/Phố"
                 android:gravity="center_vertical"
@@ -131,36 +180,20 @@
 
             <Spinner
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:id="@+id/spDuongpho" />
         </LinearLayout>
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-            <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="40dp"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:hint="Số nhà, ngõ, ngách...."
-                android:gravity="center_vertical"
-                android:layout_gravity="center"
-                android:id="@+id/textView7" />
-
-
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="1">
 
             <TextView
                 android:layout_width="200dp"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Diện tích"
                 android:gravity="center_vertical"
@@ -169,19 +202,19 @@
 
             <EditText
                 android:layout_width="fill_parent"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:id="@+id/edtDientich" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="1">
 
             <TextView
                 android:layout_width="200dp"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Giá cho thuê"
                 android:gravity="center_vertical"
@@ -190,19 +223,19 @@
 
             <EditText
                 android:layout_width="fill_parent"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:id="@+id/edtGia" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="1">
 
             <TextView
                 android:layout_width="200dp"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Ngày hết hạn"
                 android:gravity="center_vertical"
@@ -211,7 +244,7 @@
 
             <EditText
                 android:layout_width="fill_parent"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:id="@+id/edtNgayhh" />
         </LinearLayout>
@@ -219,23 +252,8 @@
     </LinearLayout>
     <TextView
         android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:background="#666666"
-        android:gravity="center_vertical"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Mô tả chi tiết"
-
-        android:id="@+id/txt" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Có nóng lạnh tiện nghi đầy đủ,...."
-        android:id="@+id/edtMota" />
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:background="#666666"
+        android:layout_height="25dp"
+        android:background="@color/tab_bg"
         android:gravity="center_vertical"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Thông tin liên hệ"
@@ -245,12 +263,39 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="phone"
         android:hint="0988888888"
+        android:textStyle="italic"
+        android:alpha="0.8"
         android:id="@+id/edtSdt" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="email@gmail.com"
+        android:textStyle="italic"
+        android:inputType="textEmailAddress"
+        android:alpha="0.8"
         android:id="@+id/edtEmail" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="25dp"
+        android:background="@color/tab_bg"
+        android:gravity="center_vertical"
+
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Mô tả chi tiết"
+
+        android:id="@+id/txt" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:textStyle="italic"
+        android:alpha="0.8"
+        android:hint="Có nóng lạnh tiện nghi đầy đủ,...."
+        android:id="@+id/edtMota" />
+
+
+
 
 </LinearLayout>
