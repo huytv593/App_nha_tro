@@ -14,8 +14,10 @@
     <color name="btn_login_bg">#eceef1</color>
     <color name="lbl_name">#333333</color>
     <color name="btn_logut_bg">#ff6861</color>
-    <color name="spinner_bg">#F0F8FF</color>
-    <color name="fragment_bg">#7FFFD4</color>
+
+    <color name="spinner_bg">#F5F5F5</color>
+    <color name="tab_bg">#26C6DA</color>
+    <color name="fragment_bg">#E0E0E0</color>
 
 
     /* Color for list view */
