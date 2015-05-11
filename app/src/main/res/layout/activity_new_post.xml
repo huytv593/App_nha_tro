@@ -55,6 +55,8 @@
     </TableRow>
     <View
         android:layout_width="match_parent"
+
+
         android:layout_height="1dp"
         android:background="#00796B"/>
 
@@ -97,11 +99,13 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
+
         android:background="#00796B"/>
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="25dp"
         android:background="@color/tab_bg"
+        android:paddingLeft="5dp"
         android:gravity="center_vertical"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Thông tin cơ bản"
@@ -109,10 +113,12 @@
         android:id="@+id/textView" />
     <View
         android:layout_width="match_parent"
+
         android:layout_height="1dp"
         android:background="#00796B"/>
     <LinearLayout
         android:orientation="vertical"
+        android:layout_marginLeft="5dp"
         android:layout_width="fill_parent"
         android:layout_height="209dp"
         >
@@ -292,6 +298,7 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="25dp"
+        android:paddingLeft="5dp"
         android:background="@color/tab_bg"
         android:gravity="center_vertical"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -307,6 +314,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:inputType="phone"
+        android:paddingLeft="5dp"
         android:hint="0988888888"
         android:textStyle="italic"
         android:background="#FFFFFF"
@@ -318,6 +326,7 @@
         android:layout_height="40dp"
         android:gravity="center_vertical"
         android:hint="email@gmail.com"
+        android:paddingLeft="5dp"
         android:background="#FFFFFF"
         android:textStyle="italic"
         android:inputType="textEmailAddress"
@@ -332,7 +341,7 @@
         android:layout_height="25dp"
         android:background="@color/tab_bg"
         android:gravity="center_vertical"
-
+android:paddingLeft="5dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Mô tả chi tiết"
 
@@ -346,6 +355,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:textStyle="italic"
+        android:paddingLeft="5dp"
         android:gravity="top|left"
         android:background="#FFFFFF"
         android:alpha="0.8"
