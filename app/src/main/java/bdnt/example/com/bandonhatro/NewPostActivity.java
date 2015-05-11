@@ -21,14 +21,14 @@ public class NewPostActivity extends Activity implements AdapterView.OnItemSelec
     HashMap<String, String[]> arrayMap;
     HashMap<String, String> params;
     String[] city = {"--Ch?n t?nh, thành ph?--", "Hà N?i"};
-    String[] hanoi = {"--Ch?n qu?n/huy?n--", "C?u Gi?y", "Ba ?ình", "??ng ?a"};
+    String[] hanoi = {"--Ch?n qu?n huy?n--", "C?u Gi?y", "Ba ?ình", "??ng ?a"};
     String[] caugiay = {"--Ch?n ph??ng/xã--", "D?ch V?ng H?u", "Mai D?ch", "D?ch V?ng"};
     String[] badinh = {"--Ch?n ph??ng/xã--", "??i C?n"};
-    String[] dongda = {"--Ch?n ph??ng/xã--", "Láng Th??ng", "Láng H?"};
-    String[] dichvonghau = {"--Ch?n ???ng ph?--", "Xuân Th?y","impossible to find"};
+    String[] dongda = {"--Ch?n ph??ng/xã--", "Láng Th??nng", "Láng H?"};
+    String[] dichvonghau = {"--Ch?n ???ng ph?--", "Xuân Th?y","Ph?m Hùng"};
     String[] maidich = {"--Ch?n ???ng ph?--", "H? Tùng M?u", "Ph?m V?n ??ng", "Doãn K? Thi?n"};
     String[] dichvong = {"--Ch?n ???ng ph?--", "Thành Thái"};
-    String[] doican = {"--Ch?n ???ng ph?--", "Ng?c Hà"};
+    String[] doican = {"--Ch?n ???ng ph?--", "Ng?cc Hà"};
     String[] langthuong = {"--Ch?n ???ng ph?--", "Pháo ?ài Láng"};
     String[] langha = {"--Ch?n ???ng ph?--", "Hu?nh Thúc Kháng"};
 
