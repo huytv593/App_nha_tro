@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="bdnt.example.com.bandonhatro.VolleyListView.RoomListViewActivity">
+    tools:context="bdnt.example.com.bandonhatro.VolleyListView.RoomListViewActivity"
+    android:id="@+id/container">
 
     <TextView
         android:layout_width="match_parent"
@@ -19,7 +20,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentTop="true"
+        android:weightSum="1">
 
         <TextView
             android:layout_width="match_parent"
@@ -28,7 +30,10 @@
             android:id="@+id/result_title"
 
             android:textSize="24sp"
-            android:gravity="center_horizontal" />
+            android:gravity="center_horizontal"
+            android:layout_weight="0.04"
+            android:paddingTop="10dp"
+            android:background="@color/tab_bg" />
 
 
 
@@ -67,7 +72,6 @@
             android:layout_weight="1"
             android:layout_margin="5dp"
             android:visibility="gone"/>
-
 
     </LinearLayout>
 
