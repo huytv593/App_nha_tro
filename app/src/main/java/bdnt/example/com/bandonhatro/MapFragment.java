@@ -1,5 +1,6 @@
 package bdnt.example.com.bandonhatro;
 
+import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,6 +9,7 @@ import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -21,6 +23,8 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 
+import bdnt.example.com.bandonhatro.VolleyListView.Dialog;
+
 
 public class MapFragment extends Fragment implements
         GoogleApiClient.ConnectionCallbacks,
@@ -31,6 +35,7 @@ public class MapFragment extends Fragment implements
     private GoogleApiClient mGoogleApiClient;
     private GoogleMap mGoogleMap;
     public static View view;
+    ImageView money;
     // These settings are the same as the settings for the map. They will in fact give you updates
     // at the maximal rates currently possible.
     private static final LocationRequest REQUEST = LocationRequest.create()
@@ -60,7 +65,14 @@ public class MapFragment extends Fragment implements
                     .addOnConnectionFailedListener(this)
                     .build();
 
-
+            money= (ImageView) view.findViewById(R.id.imvMoney);
+            money.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getActivity(), Dialog.class);
+                    startActivityForResult(intent, 1);
+                }
+            });
 
         } catch (InflateException e) {
         }
@@ -117,4 +129,6 @@ public class MapFragment extends Fragment implements
 
         return false;
     }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {}
 }

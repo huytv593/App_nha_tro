@@ -23,5 +23,6 @@
     <string name="title_activity_list_view_with_volley">ListViewWithVolley</string>
     <string name="title_activity_room_list_view">Kết quả tìm kiếm</string>
     <string name="title_activity_room_details">room_details</string>
+    <string name="title_activity_dialog">Dialog</string>
 
 </resources>

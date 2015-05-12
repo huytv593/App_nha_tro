@@ -81,6 +81,11 @@
             android:name=".room_details"
             android:label="@string/title_activity_room_details" >
         </activity>
+        <activity
+            android:name=".VolleyListView.Dialog"
+            android:label="@string/title_activity_dialog"
+            android:theme="@style/Theme.AppCompat.Light.DialogWhenLarge">
+        </activity>
     </application>
 
 </manifest>
