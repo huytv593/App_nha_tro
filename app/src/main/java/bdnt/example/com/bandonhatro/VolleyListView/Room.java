@@ -1,11 +1,13 @@
 package bdnt.example.com.bandonhatro.VolleyListView;
 
+import java.io.Serializable;
+
 import bdnt.example.com.bandonhatro.AppConfig;
 
 /**
  * Created by void on 25/04/2015.
  */
-public class Room {
+public class Room implements Serializable{
     private String id;
     private String title;
     private String create_by;
@@ -110,7 +112,7 @@ public class Room {
     }
 
     public String getArea() {
-        return area;
+        return area+" m2";
     }
 
     public void setArea(String area) {

@@ -1,14 +1,14 @@
 package bdnt.example.com.bandonhatro.VolleyListView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -25,6 +25,7 @@ import java.util.Map;
 import bdnt.example.com.bandonhatro.AppConfig;
 import bdnt.example.com.bandonhatro.AppController;
 import bdnt.example.com.bandonhatro.R;
+import bdnt.example.com.bandonhatro.room_details;
 
 public class RoomListViewActivity extends ActionBarActivity {
     ListView listView;
@@ -51,7 +52,16 @@ public class RoomListViewActivity extends ActionBarActivity {
         params = (Map) getIntent().getSerializableExtra("params");
 
         listView = (ListView) findViewById(R.id.roomList);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                Intent intent = new Intent(RoomListViewActivity.this, room_details.class);
+                Room room = roomList.get(position);
+                intent.putExtra("roomData",room);
+                startActivity(intent);
+            }
+        });
         nothing_found = (TextView) findViewById(R.id.nothing_found);
         result_title = (TextView) findViewById(R.id.result_title);
         change_to_mapView = (Button) findViewById(R.id.change_to_mapView);
