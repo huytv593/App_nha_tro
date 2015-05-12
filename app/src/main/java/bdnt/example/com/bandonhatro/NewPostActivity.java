@@ -26,17 +26,17 @@ public class NewPostActivity extends Activity implements AdapterView.OnItemSelec
     HashMap<String, String> dictionary;
     HashMap<String, String[]> arrayMap;
     HashMap<String, String> params;
-    String[] city = {"--Ch?n t?nh, th�nh ph?--", "H� N?i"};
-    String[] hanoi = {"--Ch?n qu?n huy?n--", "C?u Gi?y", "Ba ?�nh", "??ng ?a"};
-    String[] caugiay = {"--Ch?n ph??ng/x�--", "D?ch V?ng H?u", "Mai D?ch", "D?ch V?ng"};
-    String[] badinh = {"--Ch?n ph??ng/x�--", "??i C?n"};
-    String[] dongda = {"--Ch?n ph??ng/x�--", "L�ng Th??nng", "L�ng H?"};
-    String[] dichvonghau = {"--Ch?n ???ng ph?--", "Xu�n Th?y","Ph?m H�ng"};
-    String[] maidich = {"--Ch?n ???ng ph?--", "H? T�ng M?u", "Ph?m V?n ??ng", "Do�n K? Thi?n"};
-    String[] dichvong = {"--Ch?n ???ng ph?--", "Th�nh Th�i"};
-    String[] doican = {"--Ch?n ???ng ph?--", "Ng?c H�"};
-    String[] langthuong = {"--Ch?n ???ng ph?--", "Ph�o ?�i L�ng"};
-    String[] langha = {"--Ch?n ???ng ph?--", "Hu?nh Th�c Kh�ng"};
+    String[] city = {"--Chọn tỉnh/thành phố--", "Hà Nội"};
+    String[] hanoi = {"--Chọn quận/quyện--", "Cầu Giấy", "Ba Đình", "Đống Đa"};
+    String[] caugiay = {"--Chọn phường/xã--", "Dịch Vọng Hậu", "Mai Dịch", "Dịch Vọng"};
+    String[] badinh = {"--Chọn phường/xã--", "Đội Cấn"};
+    String[] dongda = {"--Chọn phường/xã--", "Láng Thượng", "Láng Hạ"};
+    String[] dichvonghau = {"--Chọn đường phố--", "Xuân Thủy","impossible to find"};
+    String[] maidich = {"--Chọn đường phố--", "Hồ Tùng Mậu", "Phạm Văn Đồng", "Doãn Kế Thiện"};
+    String[] dichvong = {"--Chọn đường phố--", "Thành Thái"};
+    String[] doican = {"--Chọn đường phố--", "Ngọc Hà"};
+    String[] langthuong = {"--Chọn đường phố--", "Pháo Đài Láng"};
+    String[] langha = {"--Chọn đường phố--", "Huỳnh Thúc Kháng"};
 
     ArrayList<String> cityList;
     ArrayList<String> districtList;
@@ -77,9 +77,9 @@ imvPost=(ImageView)findViewById(R.id.imvPost);
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(NewPostActivity.this);
-                builder1.setMessage("??ng tin th�nh c�ng.");
+                builder1.setMessage("Đăng tin thành công");
                 builder1.setCancelable(true);
-                builder1.setPositiveButton("Oke.",
+                builder1.setPositiveButton("OK.",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 dialog.cancel();
@@ -95,9 +95,9 @@ imvPost=(ImageView)findViewById(R.id.imvPost);
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(NewPostActivity.this);
-                builder1.setMessage("??ng tin th�nh c�ng.");
+                builder1.setMessage("Đăng tin thành công");
                 builder1.setCancelable(true);
-                builder1.setPositiveButton("Oke.",
+                builder1.setPositiveButton("OK.",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 dialog.cancel();
@@ -118,7 +118,7 @@ imvPost=(ImageView)findViewById(R.id.imvPost);
             case R.id.spinner2:
                 if (position == 0) {
                     emptyArrayList(districtList);
-                    districtList.add("--Ch?n qu?n/huy?n--");
+                    districtList.add("--Chọn quận huyện--");
                     districtStringArrayAdapter.notifyDataSetChanged();
                     params.put("city", "");
                 } else {
@@ -132,7 +132,7 @@ imvPost=(ImageView)findViewById(R.id.imvPost);
             case R.id.spQuanhuyen:
                 if (position == 0) {
                     emptyArrayList(precinctList);
-                    precinctList.add("--Ch?n ph??ng/x�--");
+                    precinctList.add("--Chọn phường xã--");
                     precinctStringArrayAdapter.notifyDataSetChanged();
                     params.put("district", "");
                 } else {
@@ -144,7 +144,7 @@ imvPost=(ImageView)findViewById(R.id.imvPost);
             case R.id.spPhuongxa:
                 if (position == 0) {
                     emptyArrayList(streetList);
-                    streetList.add("--Ch?n ???ng ph?--");
+                    streetList.add("--Chọn đường phố--");
                     streetStringArrayAdapter.notifyDataSetChanged();
                     params.put("precinct", "");
                 } else {
@@ -171,24 +171,25 @@ imvPost=(ImageView)findViewById(R.id.imvPost);
     private void initData() {
         //init dictionary
         dictionary = new HashMap<>();
-        dictionary.put("H� N?i", "hanoi");
-        dictionary.put("H? Ch� Minh", "hochiminh");
-        dictionary.put("C?u Gi?y", "caugiay");
-        dictionary.put("Ba ?�nh", "badinh");
-        dictionary.put("??ng ?a", "dongda");
-        dictionary.put("D?ch V?ng H?u", "dichvonghau");
-        dictionary.put("Mai D?ch", "maidich");
-        dictionary.put("D?ch V?ng", "dichvong");
-        dictionary.put("??i C?n", "doican");
-        dictionary.put("L�ng Th??ng", "langthuong");
-        dictionary.put("Xu�n Th?y", "xuanthuy");
-        dictionary.put("H? T�ng M?u", "hotungmau");
-        dictionary.put("Ph?m V?n ??ng", "phamvandong");
-        dictionary.put("Do�n K? Thi?n", "doankethien");
-        dictionary.put("Th�nh Th�i", "thanhthai");
-        dictionary.put("Ng?c H�", "ngocha");
-        dictionary.put("Ph�o ?�i L�ng", "phaodailang");
-        dictionary.put("Hu?nh Th�c Kh�ng", "huynhthuckhang");
+        dictionary = new HashMap<>();
+        dictionary.put("Hà Nội", "hanoi");
+        dictionary.put("Hồ Chí Minh", "hochiminh");
+        dictionary.put("Cầu Giấy", "caugiay");
+        dictionary.put("Ba Đình", "badinh");
+        dictionary.put("Đống Đa", "dongda");
+        dictionary.put("Dịch Vọng Hậu", "dichvonghau");
+        dictionary.put("Mai Dịch", "maidich");
+        dictionary.put("Dịch Vọng", "dichvong");
+        dictionary.put("Đội Cấn", "doican");
+        dictionary.put("Láng Thượng", "langthuong");
+        dictionary.put("Xuân Thủy", "xuanthuy");
+        dictionary.put("Hồ Tùng Mậu", "hotungmau");
+        dictionary.put("Phạm Văn Đồng", "phamvandong");
+        dictionary.put("Doãn Kế Thiện", "doankethien");
+        dictionary.put("Thành Thái", "thanhthai");
+        dictionary.put("Ngọc Hà", "ngocha");
+        dictionary.put("Pháo Đài Láng", "phaodailang");
+        dictionary.put("Huỳnh Thúc Kháng", "huynhthuckhang");
         //
         arrayMap = new HashMap<>();
         arrayMap.put("hanoi", hanoi);

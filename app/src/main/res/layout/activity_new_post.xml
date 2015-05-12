@@ -8,7 +8,7 @@
     <TableRow
         android:layout_width="match_parent"
         android:background="@color/tab_bg"
-        android:layout_height="wrap_content">
+        android:layout_height="54dp">
     <TableRow
         android:layout_width="0dp"
         android:layout_weight="1"
@@ -17,19 +17,21 @@
 
         <ImageView
             android:layout_marginLeft="10dp"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
             android:layout_marginRight="5dp"
             android:id="@+id/imvBack"
             android:background="@drawable/pre"
-            />
+            android:layout_marginTop="15dp" />
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="30dp"
             android:text="Đăng tin nhà trọ"
             android:textStyle="bold"
             android:gravity="center"
-            android:id="@+id/txtBack" />
+            android:id="@+id/txtBack"
+            android:layout_marginTop="15dp"
+            android:textColor="#ffffffff" />
     </TableRow>
         <TableRow
             android:layout_width="0dp"
@@ -41,7 +43,8 @@
             android:layout_height="40dp"
             android:background="@drawable/upload"
 
-            android:id="@+id/imvPost" />
+            android:id="@+id/imvPost"
+            android:layout_marginTop="10dp" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -50,7 +53,9 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="30dp"
             android:gravity="center"
-            android:id="@+id/txtPost" />
+            android:id="@+id/txtPost"
+            android:textColor="#ffffffff"
+            android:layout_marginTop="10dp" />
     </TableRow>
     </TableRow>
     <View
@@ -63,31 +68,16 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="90dp"
         android:paddingTop="5dp"
         android:paddingBottom="5dp">
+
         <ImageView
             android:layout_width="0dp"
             android:scaleType="fitXY"
             android:layout_marginLeft="30dp"
             android:layout_weight="1"
-            android:layout_height="50dp"
-            android:background="@drawable/camera"
-            android:id="@+id/imv1"
-            android:clickable="true" />
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_marginLeft="30dp"
-            android:scaleType="fitXY"
-            android:layout_weight="1"
-            android:layout_height="50dp"
-            android:background="@drawable/camera"/>
-        <ImageView
-            android:layout_width="0dp"
-            android:scaleType="fitXY"
-            android:layout_marginLeft="30dp"
-            android:layout_weight="1"
-            android:layout_height="50dp"
+            android:layout_height="75dp"
             android:background="@drawable/camera"/>
         <ImageView
             android:layout_width="0dp"
@@ -95,15 +85,11 @@
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
             android:layout_weight="1"
-            android:layout_height="50dp"
+            android:layout_height="75dp"
             android:background="@drawable/camera"/>
 
     </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
 
-        android:background="#00796B"/>
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="25dp"
@@ -113,12 +99,10 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Thông tin cơ bản"
 
-        android:id="@+id/textView" />
-    <View
-        android:layout_width="match_parent"
+        android:id="@+id/textView"
+        android:textColor="#ffffffff"
+        android:layout_marginBottom="5dp" />
 
-        android:layout_height="1dp"
-        android:background="#00796B"/>
     <LinearLayout
         android:orientation="vertical"
         android:layout_marginLeft="5dp"
@@ -294,10 +278,7 @@
         </LinearLayout>
 
     </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#00796B"/>
+
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="25dp"
@@ -307,11 +288,10 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Thông tin liên hệ"
 
-        android:id="@+id/txt3" />
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#00796B"/>
+        android:id="@+id/txt3"
+        android:textColor="#ffffffff"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp" />
 
     <EditText
         android:layout_width="match_parent"
@@ -323,7 +303,8 @@
         android:background="#FFFFFF"
         android:gravity="center_vertical"
         android:alpha="0.8"
-        android:id="@+id/edtSdt" />
+        android:id="@+id/edtSdt"
+        android:layout_marginBottom="1dp" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -335,10 +316,7 @@
         android:inputType="textEmailAddress"
         android:alpha="0.8"
         android:id="@+id/edtEmail" />
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#00796B"/>
+
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="25dp"
@@ -348,7 +326,9 @@ android:paddingLeft="5dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Mô tả chi tiết"
 
-        android:id="@+id/txt" />
+        android:id="@+id/txt"
+        android:textColor="#ffffffff"
+        android:layout_marginTop="10dp" />
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -363,7 +343,8 @@ android:paddingLeft="5dp"
         android:background="#FFFFFF"
         android:alpha="0.8"
         android:hint="Có nóng lạnh tiện nghi đầy đủ,...."
-        android:id="@+id/edtMota" />
+        android:id="@+id/edtMota"
+        android:layout_marginBottom="10dp" />
 
 
 
