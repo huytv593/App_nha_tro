@@ -57,6 +57,7 @@ public class room_details extends ActionBarActivity {
         tv_roomDetailPrice.setText(roomData.getPrice());
         tv_roomDetailAddress.setText(roomData.getAddress());
         tv_roomDetailInfo.setText(roomData.getInfo());
+        tv_roomDetailEndAt.setText(roomData.getEnd_at());
 
         if (imageLoader == null)
             imageLoader = AppController.getInstance().getImageLoader();
