@@ -9,60 +9,96 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="400dp">
-        <Spinner
+        <com.rey.material.widget.Spinner
+            style="@style/Material.Widget.Spinner"
+            app:rd_style="@style/Material.Drawable.Ripple.Wave.Light"
+            app:rd_enable="true"
+            app:spn_arrowSwitchMode="true"
+            app:spn_dividerColor="@color/divider_bg"
+            app:spn_arrowAnimDuration="@android:integer/config_shortAnimTime"
+            app:spn_arrowInterpolator="@android:anim/decelerate_interpolator"
             android:layout_width="250dp"
-            android:background="@color/spinner_bg"
-            android:gravity="center"
-
+            android:gravity="top|center_vertical"
             android:layout_marginTop="35dp"
             android:layout_gravity="center"
             android:layout_height="40dp"
+
             android:id="@+id/city_spinner" />
 
-        <Spinner
+        <com.rey.material.widget.Spinner
+            style="@style/Material.Widget.Spinner"
+            app:rd_style="@style/Material.Drawable.Ripple.Wave.Light"
+            app:rd_enable="true"
+            app:spn_arrowSwitchMode="true"
+            app:spn_dividerColor="@color/divider_bg"
+            app:spn_arrowAnimDuration="@android:integer/config_shortAnimTime"
+            app:spn_arrowInterpolator="@android:anim/decelerate_interpolator"
             android:layout_width="250dp"
             android:gravity="center"
-            android:background="@color/spinner_bg"
             android:layout_marginTop="15dp"
             android:layout_gravity="center"
             android:layout_height="40dp"
             android:id="@+id/district_spinner" />
 
-        <Spinner
+        <com.rey.material.widget.Spinner
+            style="@style/Material.Widget.Spinner"
+            app:rd_style="@style/Material.Drawable.Ripple.Wave.Light"
+            app:rd_enable="true"
+            app:spn_arrowSwitchMode="true"
+            app:spn_dividerColor="@color/divider_bg"
+            app:spn_arrowAnimDuration="@android:integer/config_shortAnimTime"
+            app:spn_arrowInterpolator="@android:anim/decelerate_interpolator"
             android:layout_width="250dp"
             android:gravity="center"
             android:layout_marginTop="15dp"
-            android:background="@color/spinner_bg"
             android:layout_gravity="center"
             android:layout_height="40dp"
             android:id="@+id/precinct_spinner" />
 
-        <Spinner
+        <com.rey.material.widget.Spinner
+            style="@style/Material.Widget.Spinner"
+            app:rd_style="@style/Material.Drawable.Ripple.Wave.Light"
+            app:rd_enable="true"
+            app:spn_arrowSwitchMode="true"
+            app:spn_dividerColor="@color/divider_bg"
+            app:spn_arrowAnimDuration="@android:integer/config_shortAnimTime"
+            app:spn_arrowInterpolator="@android:anim/decelerate_interpolator"
             android:layout_width="250dp"
             android:gravity="center"
-            android:background="@color/spinner_bg"
             android:layout_marginTop="15dp"
             android:layout_gravity="center"
             android:layout_height="40dp"
             android:id="@+id/street_spinner" />
 
-        <Spinner
+        <com.rey.material.widget.Spinner
+            style="@style/Material.Widget.Spinner"
+            app:rd_style="@style/Material.Drawable.Ripple.Wave.Light"
+            app:rd_enable="true"
+            app:spn_arrowSwitchMode="true"
+            app:spn_dividerColor="@color/divider_bg"
+            app:spn_arrowAnimDuration="@android:integer/config_shortAnimTime"
+            app:spn_arrowInterpolator="@android:anim/decelerate_interpolator"
 
             android:layout_width="250dp"
             android:gravity="center"
-            android:background="@color/spinner_bg"
             android:layout_marginTop="15dp"
             android:layout_gravity="center"
             android:layout_height="40dp"
             android:id="@+id/square_spinner" />
 
-        <Spinner
+        <com.rey.material.widget.Spinner
+            style="@style/Material.Widget.Spinner"
+            app:rd_style="@style/Material.Drawable.Ripple.Wave.Light"
+            app:rd_enable="true"
+            app:spn_arrowSwitchMode="true"
+            app:spn_dividerColor="@color/divider_bg"
+            app:spn_arrowAnimDuration="@android:integer/config_shortAnimTime"
+            app:spn_arrowInterpolator="@android:anim/decelerate_interpolator"
             android:layout_width="250dp"
             android:gravity="center"
 
 
             android:layout_marginTop="15dp"
-            android:background="@color/spinner_bg"
             android:layout_gravity="center"
             android:layout_height="40dp"
             android:id="@+id/price_spinner" />
@@ -84,7 +120,7 @@
         android:layout_width="250dp"
         android:gravity="center"
         android:layout_marginTop="60dp"
-        android:background="@color/spinner_bg"
+        android:background="@color/divider_bg"
         android:layout_gravity="center"
         android:layout_height="40dp"
 
