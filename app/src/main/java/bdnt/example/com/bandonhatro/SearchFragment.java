@@ -434,5 +434,6 @@ public class SearchFragment extends Fragment implements  com.rey.material.widget
 
     @Override
     public void onItemSelected(com.rey.material.widget.Spinner spinner, View view, int position, long l) {
+
     }
 }
