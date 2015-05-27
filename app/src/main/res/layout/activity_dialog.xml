@@ -60,6 +60,6 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:id="@+id/btnOke"
-            android:text="Oke"/>
+            android:text="Áp dụng"/>
     </TableRow>
 </LinearLayout>

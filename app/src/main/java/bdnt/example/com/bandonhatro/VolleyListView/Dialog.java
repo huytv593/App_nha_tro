@@ -22,12 +22,12 @@ public class Dialog extends Activity {
         btnOke = (Button) findViewById(R.id.btnOke);
         Slider sl_continuous = (Slider)findViewById(R.id.slider);
          tv_continuous = (TextView) findViewById(R.id.slider_tv_continuous);
-        tv_continuous.setText("0 Tri?u");
+        tv_continuous.setText("0 Triệu");
         sl_continuous.setOnPositionChangeListener(new Slider.OnPositionChangeListener() {
             @Override
             public void onPositionChanged(Slider view, float oldPos, float newPos, int oldValue, int newValue) {
                 float value=newValue;
-                tv_continuous.setText(value/10+" Tri?u");
+                tv_continuous.setText(value/10+" Triệu");
             }
         });
         btnClose.setOnClickListener(new View.OnClickListener() {
