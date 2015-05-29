@@ -18,7 +18,7 @@
     <color name="spinner_bg">#F5F5F5</color>
     <color name="tab_bg">#26C6DA</color>
     <color name="fragment_bg">#FFFFFF</color>
-
+    <color name="snackbar_bg">#000000</color>
 
     /* Color for list view */
     <color name="genre">#666666</color>

@@ -2,11 +2,11 @@ package bdnt.example.com.bandonhatro.VolleyListView;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -14,6 +14,8 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.nispok.snackbar.Snackbar;
+import com.nispok.snackbar.SnackbarManager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,8 +34,9 @@ public class RoomListViewActivity extends ActionBarActivity {
     RoomListAdapter adapter;
     ProgressDialog pDialog;
     ArrayList<Room> roomList;
+
     TextView nothing_found, result_title;
-    Button change_to_mapView, size_result;
+
     Map<String, String> params;
 
     @Override
@@ -49,6 +52,8 @@ public class RoomListViewActivity extends ActionBarActivity {
     private void init() {
         setContentView(R.layout.activity_room_list_view);
 
+
+        ;
         params = (Map) getIntent().getSerializableExtra("params");
 
         listView = (ListView) findViewById(R.id.roomList);
@@ -62,10 +67,8 @@ public class RoomListViewActivity extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-        nothing_found = (TextView) findViewById(R.id.nothing_found);
+
         result_title = (TextView) findViewById(R.id.result_title);
-        change_to_mapView = (Button) findViewById(R.id.change_to_mapView);
-        size_result = (Button) findViewById(R.id.size_result);
 
         pDialog = new ProgressDialog(this);
         pDialog.setMessage("Loading...");
@@ -109,14 +112,17 @@ public class RoomListViewActivity extends ActionBarActivity {
                 }
 
                 if (roomList.size() != 0) {
-                    size_result.setVisibility(View.VISIBLE);
-                    change_to_mapView.setVisibility(View.VISIBLE);
+                    SnackbarManager.show(
+                            Snackbar.with(getApplicationContext())
+                                    .text("Tìm được "+roomList.size()+" phòng.").color(Color.DKGRAY).textColor(Color.WHITE),RoomListViewActivity.this);
                     listView.setVisibility(View.VISIBLE);
                     adapter = new RoomListAdapter(RoomListViewActivity.this, roomList);
                     listView.setAdapter(adapter);
-                    size_result.setText("Tìm được " + Integer.toString(roomList.size()) + " phòng");
+
                 } else {
-                    nothing_found.setVisibility(View.VISIBLE);
+                    SnackbarManager.show(
+                    Snackbar.with(getApplicationContext())
+                            .text("Không thể tìm được phòng theo yêu cầu.").color(Color.DKGRAY).textColor(Color.WHITE),RoomListViewActivity.this);
                 }
             }
         }, new Response.ErrorListener() {

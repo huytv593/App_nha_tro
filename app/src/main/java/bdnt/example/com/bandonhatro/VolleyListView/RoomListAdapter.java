@@ -73,10 +73,10 @@ public class RoomListAdapter extends BaseAdapter {
 		title.setText(room.getTitle());
 
 		// address
-		address.setText("Địa chỉ: " + String.valueOf(room.getAddress()));
+		address.setText( String.valueOf(room.getAddress()));
 		
 		// end at
-		end_at.setText("Ngày hết hạn: "+room.getEnd_at());
+		end_at.setText(room.getEnd_at());
 		
 		// price
 		price.setText("Giá: "+String.valueOf(room.getPrice()));

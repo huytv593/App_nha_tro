@@ -1,77 +1,48 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context="bdnt.example.com.bandonhatro.VolleyListView.RoomListViewActivity"
     android:id="@+id/container">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/nothing_found"
-        android:gravity="center_horizontal"
-        android:id="@+id/nothing_found"
-        android:visibility="gone"
-        android:textSize="24sp"
-       android:layout_centerInParent="true"/>
 
-    <LinearLayout
-        android:layout_above="@+id/linear_bot"
-        android:layout_width="match_parent"
+    <TableRow
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_alignParentTop="true"
-        android:weightSum="1">
+        android:layout_width="match_parent"
+        android:background="@color/tab_bg"
+
+        >
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:id="@+id/imageView"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/arrleft"/>
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="34dp"
+            android:layout_height="50dp"
             android:text="Kết quả tìm kiếm"
             android:id="@+id/result_title"
-
+            android:layout_marginLeft="20dp"
+            android:textColor="#FFFFFF"
             android:textSize="24sp"
-            android:gravity="center"
+            android:gravity="center_vertical"
 
-            android:background="@color/tab_bg" />
+             />
+    </TableRow>
 
 
-
-        <ListView
-            android:visibility="gone"
-            android:id="@+id/roomList"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:divider="@color/list_divider"
-            android:dividerHeight="1dp"
-            android:listSelector="@drawable/list_row_selector" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linear_bot"
+    <ListView
+        android:visibility="gone"
+        android:id="@+id/roomList"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:divider="@color/list_divider"
+        android:dividerHeight="1dp"
+        android:listSelector="@drawable/list_row_selector" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Tìm được 20 phòng"
-            android:id="@+id/size_result"
-            android:layout_margin="5dp"
-            android:layout_weight="1"
-            android:visibility="gone"/>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Xem trên bản đồ"
-            android:id="@+id/change_to_mapView"
-            android:layout_weight="1"
-            android:layout_margin="5dp"
-            android:visibility="gone"/>
-
-    </LinearLayout>
-
-</RelativeLayout>
+</LinearLayout>

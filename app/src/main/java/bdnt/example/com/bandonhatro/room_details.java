@@ -39,12 +39,12 @@ public class room_details extends ActionBarActivity {
     }
 
     private void initial() {
-        tv_roomDetailTitle = (TextView) findViewById(R.id.tv_roomDetailTitle);
-        tv_roomDetailSquare = (TextView) findViewById(R.id.tv_roomDetailSquare);
-        tv_roomDetailPrice = (TextView) findViewById(R.id.tv_roomDetailPrice);
-        tv_roomDetailAddress = (TextView) findViewById(R.id.tv_roomDetailAddress);
-        tv_roomDetailEndAt = (TextView) findViewById(R.id.tv_roomDetailEndAt);
-        tv_roomDetailInfo = (TextView) findViewById(R.id.tv_roomDetailInfo);
+        tv_roomDetailTitle = (TextView) findViewById(R.id.result_title);
+        tv_roomDetailSquare = (TextView) findViewById(R.id.tvDientich);
+        tv_roomDetailPrice = (TextView) findViewById(R.id.tvGia);
+        tv_roomDetailAddress = (TextView) findViewById(R.id.tvDiachi);
+        tv_roomDetailEndAt = (TextView) findViewById(R.id.tvNgayhethan);
+        tv_roomDetailInfo = (TextView) findViewById(R.id.tvMota);
         gallery = (Gallery) findViewById(R.id.gallery);
 
     }

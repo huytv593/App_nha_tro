@@ -72,7 +72,7 @@ public class Room implements Serializable{
     }
 
     public String getPrice() {
-        return price+"000 vnd";
+        return price+" tri?u";
     }
 
     public void setPrice(String price) {
