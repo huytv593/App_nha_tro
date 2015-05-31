@@ -24,9 +24,9 @@
     <!-- Backward-compatible version of ?android:attr/buttonBarButtonStyle -->
     <style name="ButtonBarButton" />
     <style name="SnackBarSingleLine" parent="Material.Widget.SnackBar.Mobile">
+    </style>
     <style name="menu_labels_style">
         <item name="android:background">@drawable/fab_label_background</item>
         <item name="android:textColor">@color/white</item>
-    </style>
     </style>
 </resources>
