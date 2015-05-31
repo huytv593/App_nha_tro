@@ -1,7 +1,10 @@
 package bdnt.example.com.bandonhatro;
 
-import android.content.Intent;
+import android.content.Context;
+import android.graphics.Color;
+import android.location.Criteria;
 import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -9,39 +12,28 @@ import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationListener;
-import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationServices;
+import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
-import bdnt.example.com.bandonhatro.VolleyListView.Dialog;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
-public class MapFragment extends Fragment implements
-        GoogleApiClient.ConnectionCallbacks,
-        GoogleApiClient.OnConnectionFailedListener,
-        LocationListener,
-        GoogleMap.OnMyLocationButtonClickListener,
-        OnMapReadyCallback{
-    private GoogleApiClient mGoogleApiClient;
+public class MapFragment extends Fragment  {
+
     private GoogleMap mGoogleMap;
     public static View view;
-    ImageView money;
-    // These settings are the same as the settings for the map. They will in fact give you updates
-    // at the maximal rates currently possible.
-    private static final LocationRequest REQUEST = LocationRequest.create()
-            .setInterval(5000)         // 5 seconds
-            .setFastestInterval(16)    // 16ms = 60fps
-            .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+    Map<Marker, String> markerData;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -49,7 +41,7 @@ public class MapFragment extends Fragment implements
 
 
         if (view != null) {
-            Log.i("onCreateView","!=Null");
+            Log.i("onCreateView", "!=Null");
             ViewGroup parent = (ViewGroup) view.getParent();
             if (parent != null)
                 parent.removeView(view);
@@ -57,78 +49,107 @@ public class MapFragment extends Fragment implements
         try {
             view = inflater.inflate(R.layout.fragment_map, container, false);
             /* Setting for map */
-            mGoogleMap = ((SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map)).getMap();
-            mGoogleMap.setMyLocationEnabled(true);
-            mGoogleApiClient = new GoogleApiClient.Builder(getActivity())
-                    .addApi(LocationServices.API)
-                    .addConnectionCallbacks(this)
-                    .addOnConnectionFailedListener(this)
-                    .build();
+            setUpMapIfNeeded();
 
-            money= (ImageView) view.findViewById(R.id.imvMoney);
-            money.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(getActivity(), Dialog.class);
-                    startActivityForResult(intent, 1);
-                }
-            });
 
         } catch (InflateException e) {
         }
         return view;
     }
+
+    private void setUpMapIfNeeded() {
+        if (mGoogleMap != null) {
+            return;
+        }
+
+        mGoogleMap = ((SupportMapFragment)getChildFragmentManager().findFragmentById(R.id.map)).getMap();
+        if (mGoogleMap != null) {
+            startDemo();
+        }
+    }
+
     @Override
     public void onResume() {
         super.onResume();
-        Log.i("onResume","");
-        mGoogleApiClient.connect();
-    }
-    @Override
-    public void onPause() {
-        super.onPause();
-        Log.i("onPause","");
-        mGoogleApiClient.disconnect();
-    }
-    @Override
-    public void onConnected(Bundle bundle) {
-        Log.i("onConnected","");
-        LocationServices.FusedLocationApi.requestLocationUpdates(
-                mGoogleApiClient,
-                REQUEST,
-                this);  // LocationListene
+        setUpMapIfNeeded();
     }
 
-    @Override
-    public void onConnectionSuspended(int i) {
-        // Do nothing
-    }
-
-    @Override
-    public void onLocationChanged(Location location) {
-        Log.i("onLocationChanged","");
-        mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), 14.0f));
-    }
-
-    @Override
-    public void onConnectionFailed(ConnectionResult connectionResult) {
-        // Do nothing
-    }
-
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-//        mGoogleMap=googleMap;
-        Log.i("onMapReady","");
+    public void startDemo() {
         mGoogleMap.setMyLocationEnabled(true);
-        mGoogleMap.setOnMyLocationButtonClickListener(this);
+        Marker marker1 = mGoogleMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker").snippet("Snippet"));
+        LocationManager locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+        Criteria criteria = new Criteria();
+        String provider = locationManager.getBestProvider(criteria, true);
+        Location myLocation = locationManager.getLastKnownLocation(provider);
+        Log.d("null 1", Boolean.toString(myLocation == null));
+        // set map type
+        mGoogleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+
+        // Get latitude of the current location
+        double latitude = myLocation.getLatitude();
+
+        // Get longitude of the current location
+        double longitude = myLocation.getLongitude();
+        Log.i("locaion", Double.toString(latitude) + " " + Double.toString(longitude));
+        // Create a LatLng object for the current location
+        LatLng latLng = new LatLng(latitude, longitude);
+
+        // Show the current location in Google Map
+        mGoogleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+
+        // Zoom in the Google Map
+        mGoogleMap.animateCamera(CameraUpdateFactory.zoomTo(14));
+        Marker marker2 = mGoogleMap.addMarker(new MarkerOptions().position(new LatLng(21.0413057, 105.7778885)).title("1").snippet("Consider yourself located"));
+        Marker marker3 = mGoogleMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)).title("You are here!").snippet("Consider yourself located"));
+        Marker marker4 = mGoogleMap.addMarker(new MarkerOptions().position(new LatLng(21.0436057, 105.7775885)).title("2").snippet("Consider yourself located"));
+        markerData = new HashMap<>();
+        markerData.put(marker1, "1");
+        markerData.put(marker2, "2");
+        markerData.put(marker3, "3");
+        markerData.put(marker4, "4");
+        mGoogleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                String id = markerData.get(marker);
+                Toast.makeText(getActivity(), "id = " + id, Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
+
+        final FloatingActionButton mapFilter = (FloatingActionButton) view.findViewById(R.id.mapFilter);
+        mapFilter.setShadowColor(Color.WHITE);
+        final FloatingActionButton mapList = (FloatingActionButton) view.findViewById(R.id.mapList);
+        mapFilter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "filter", Toast.LENGTH_SHORT).show();
+            }
+        });
+        mapList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "list", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+//        //floating button
+//        final FloatingActionButton actionButtonParent = (FloatingActionButton)view.findViewById(R.id.multiple_actions);
+//        actionButtonParent.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
+//        final FloatingActionButton actionA = (FloatingActionButton) view.findViewById(R.id.action_a);
+//        actionA.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(getActivity(),"pressss ",Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//        final FloatingActionButton actionB = (FloatingActionButton) view.findViewById(R.id.action_b);
     }
 
-    @Override
-    public boolean onMyLocationButtonClick() {
-        Toast.makeText(getActivity(), "MyLocation button clicked", Toast.LENGTH_SHORT).show();
 
-        return false;
-    }
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {}
+
 }
