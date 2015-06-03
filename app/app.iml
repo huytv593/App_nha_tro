@@ -91,6 +91,7 @@
     <orderEntry type="library" exported="" name="play-services-panorama-7.0.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-location-7.0.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-safetynet-7.0.0" level="project" />
+    <orderEntry type="library" exported="" name="snackbar-2.10.10" level="project" />
     <orderEntry type="library" exported="" name="cardview-v7-21.0.3" level="project" />
     <orderEntry type="library" exported="" name="play-services-appindexing-7.0.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-7.0.0" level="project" />
@@ -113,7 +114,6 @@
     <orderEntry type="library" exported="" name="play-services-drive-7.0.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-analytics-7.0.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-games-7.0.0" level="project" />
-    <orderEntry type="library" exported="" name="snackbar-2.10.9" level="project" />
     <orderEntry type="library" exported="" name="material-1.1.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-nearby-7.0.0" level="project" />
   </component>
