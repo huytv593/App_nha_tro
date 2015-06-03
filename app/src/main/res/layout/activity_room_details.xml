@@ -106,7 +106,7 @@
                     android:paddingRight="15dp"
                     android:background="#FFFFFF"
                     android:gravity="center_vertical"
-                    android:text="Giá:" />
+                    android:text="Giá: " />
 
                 <TextView
                     android:id="@+id/tvNgaydang"
