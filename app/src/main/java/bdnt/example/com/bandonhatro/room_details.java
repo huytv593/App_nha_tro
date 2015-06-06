@@ -14,6 +14,7 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Gallery;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
@@ -23,7 +24,7 @@ import bdnt.example.com.bandonhatro.VolleyListView.Room;
 
 
 public class room_details extends ActionBarActivity {
-
+    ImageView back;
     TextView tv_roomDetailTitle, tv_roomDetailSquare, tv_roomDetailPrice, tv_roomDetailAddress, tv_roomDetailEndAt, tv_roomDetailInfo;
     Gallery gallery;
     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
@@ -35,6 +36,13 @@ public class room_details extends ActionBarActivity {
         getSupportActionBar().hide();
         initial();
         deployment();
+        back=(ImageView)findViewById(R.id.imvBack2);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
     }
 
@@ -53,10 +61,10 @@ public class room_details extends ActionBarActivity {
         Room roomData = (Room) getIntent().getSerializableExtra("roomData");
         Log.d("pass room data", roomData.toString());
         tv_roomDetailTitle.setText(roomData.getTitle());
-        tv_roomDetailSquare.setText(roomData.getArea());
-        tv_roomDetailPrice.setText(roomData.getPrice());
-        tv_roomDetailAddress.setText(roomData.getAddress());
-        tv_roomDetailInfo.setText(roomData.getInfo());
+        tv_roomDetailSquare.setText("Dien tich: "+roomData.getArea());
+        tv_roomDetailPrice.setText("Giá: "+roomData.getPrice());
+        tv_roomDetailAddress.setText("dia chi: "+roomData.getAddress());
+        tv_roomDetailInfo.setText("Mô ta chi tiet: "+roomData.getInfo());
         tv_roomDetailEndAt.setText(roomData.getEnd_at());
 
         if (imageLoader == null)

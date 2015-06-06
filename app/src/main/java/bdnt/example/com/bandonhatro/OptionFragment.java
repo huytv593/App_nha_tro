@@ -23,15 +23,7 @@ public class OptionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_option, container, false);
-        btnLinkToLoginScreen = (TextView) v.findViewById(R.id.btnLinkToLoginScreen);
-        btnLinkToLoginScreen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), LoginActivity.class);
-                startActivity(intent);
 
-            }
-        });
         btnDangTin = (TextView) v.findViewById(R.id.btnNewPost);
         btnDangTin.setOnClickListener(new View.OnClickListener() {
             @Override

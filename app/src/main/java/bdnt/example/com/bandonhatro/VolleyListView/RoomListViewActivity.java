@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -34,7 +35,7 @@ public class RoomListViewActivity extends ActionBarActivity {
     RoomListAdapter adapter;
     ProgressDialog pDialog;
     ArrayList<Room> roomList;
-
+    ImageView back;
     TextView nothing_found, result_title;
 
     Map<String, String> params;
@@ -55,7 +56,13 @@ public class RoomListViewActivity extends ActionBarActivity {
 
         ;
         params = (Map) getIntent().getSerializableExtra("params");
-
+        back=(ImageView)findViewById(R.id.imvBack1);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         listView = (ListView) findViewById(R.id.roomList);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

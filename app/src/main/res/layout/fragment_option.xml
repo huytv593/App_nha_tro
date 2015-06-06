@@ -6,52 +6,85 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TableRow
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"
+        android:layout_height="60dp">
 
-    <TextView
-        android:id="@+id/btnNewPost"
-android:background="#E0F2F1"
-        android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:gravity="left|center_vertical"
-        android:paddingLeft="5dp"
-        android:text="Đăng tin" />
-    <TextView
-        android:id="@+id/btnLinkToLoginScreen"
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/fill_3"
+            android:id="@+id/imageView2" />
 
-        android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:gravity="left|center_vertical"
-        android:paddingLeft="5dp"
-
-        android:text="Đăng nhập" />
+        <TextView
+            android:id="@+id/btnNewPost"
+            android:layout_marginLeft="10dp"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="5dp"
+            android:textSize="16sp"
+            android:text="Đăng Tin" />
+    </TableRow>
+   <View
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:background="@color/divider_bg"/>
+    <TableRow
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="60dp">
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/oval_43"
+            android:id="@+id/imvGioiThieu" />
 
     <TextView
         android:id="@+id/btnGioiThieu"
-        android:background="#E0F2F1"
+        android:layout_marginLeft="10dp"
         android:layout_width="fill_parent"
         android:layout_height="40dp"
+        android:textSize="16sp"
         android:gravity="left|center_vertical"
         android:paddingLeft="5dp"
         android:text="Giới thiệu" />
 
-    <TextView
-        android:id="@+id/btnHdsd"
-
-        android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:gravity="left|center_vertical"
-        android:paddingLeft="5dp"
-        android:text="Hướng dẫn sử dụng" />
+    </TableRow>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_bg"/>
+    <TableRow
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="60dp">
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/fill_4"
+            android:id="@+id/imvGopY" />
 
     <TextView
         android:id="@+id/btnGopY"
-        android:background="#E0F2F1"
+        android:textSize="16sp"
+       android:layout_marginLeft="10dp"
         android:layout_width="fill_parent"
         android:layout_height="40dp"
         android:gravity="left|center_vertical"
         android:paddingLeft="5dp"
         android:text="Góp ý" />
 
-
+</TableRow>
+<View
+android:layout_width="match_parent"
+android:layout_height="1dp"
+android:background="@color/divider_bg"/>
 
 </LinearLayout>

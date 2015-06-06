@@ -14,9 +14,9 @@
 
         >
         <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:id="@+id/imageView"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/imvBack1"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="20dp"
             android:background="@drawable/arrleft"/>
@@ -28,7 +28,7 @@
             android:id="@+id/result_title"
             android:layout_marginLeft="20dp"
             android:textColor="#FFFFFF"
-            android:textSize="24sp"
+            android:textSize="18sp"
             android:gravity="center_vertical"
 
              />

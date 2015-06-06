@@ -26,7 +26,7 @@ public class MainActivity extends FragmentActivity {
                 mTabHost.newTabSpec("tab2").setIndicator("Bản đồ", getResources().getDrawable(R.drawable.map)),
                 MapFragment.class, null);
         mTabHost.addTab(
-                mTabHost.newTabSpec("tab3").setIndicator("Tùy chọn", getResources().getDrawable(R.drawable.option)),
+                mTabHost.newTabSpec("tab3").setIndicator("Tùy chọn", getResources().getDrawable(R.drawable.mennu)),
                 OptionFragment.class, null);
     }
 
