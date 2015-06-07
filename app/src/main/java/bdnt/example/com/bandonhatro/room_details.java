@@ -61,10 +61,10 @@ public class room_details extends ActionBarActivity {
         Room roomData = (Room) getIntent().getSerializableExtra("roomData");
         Log.d("pass room data", roomData.toString());
         tv_roomDetailTitle.setText(roomData.getTitle());
-        tv_roomDetailSquare.setText("Dien tich: "+roomData.getArea());
-        tv_roomDetailPrice.setText("Gi�: "+roomData.getPrice());
-        tv_roomDetailAddress.setText("dia chi: "+roomData.getAddress());
-        tv_roomDetailInfo.setText("M� ta chi tiet: "+roomData.getInfo());
+        tv_roomDetailSquare.setText("Diện tích: "+roomData.getArea());
+        tv_roomDetailPrice.setText("Giá: "+roomData.getPrice());
+        tv_roomDetailAddress.setText("Địa chỉ: "+roomData.getAddress());
+        tv_roomDetailInfo.setText("Mô tả chi tiết: "+roomData.getInfo());
         tv_roomDetailEndAt.setText(roomData.getEnd_at());
 
         if (imageLoader == null)

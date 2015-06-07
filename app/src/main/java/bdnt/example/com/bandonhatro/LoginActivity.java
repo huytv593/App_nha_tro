@@ -2,6 +2,7 @@ package bdnt.example.com.bandonhatro;
 
 import bdnt.example.com.bandonhatro.AppConfig;
 import bdnt.example.com.bandonhatro.AppController;
+import bdnt.example.com.bandonhatro.VolleyListView.Dialog;
 import bdnt.example.com.bandonhatro.helper.SessionManager;
 
 import java.util.HashMap;
@@ -53,12 +54,7 @@ public class LoginActivity extends Activity {
         session = new SessionManager(getApplicationContext());
 
         // Check if user is already logged in or not
-        if (session.isLoggedIn()) {
-            // User is already logged in. Take him to main activity
-            Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
-            startActivity(intent);
-            finish();
-        }
+
 
         // Login button Click Event
         btnLogin.setOnClickListener(new View.OnClickListener() {

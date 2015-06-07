@@ -33,16 +33,16 @@
             android:id="@+id/mapFilter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_edit"
-
+            android:src="@drawable/filter_filled"
+            android:scaleType="fitXY"
             fab:fab_label="Lọc" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/mapList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_edit"
-
+            android:src="@drawable/stack_"
+            android:scaleType="centerCrop"
             fab:fab_label="Danh sách"
             />
 
