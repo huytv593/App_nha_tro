@@ -44,7 +44,7 @@ public class SearchFragment extends Fragment implements  com.rey.material.widget
     String[] langthuong = {"--Chọn đường phố--", "Pháo Đài Láng"};
     String[] langha = {"--Chọn đường phố--", "Huỳnh Thúc Kháng"};
     String[] square = {"--Chọn diện tích--", "Dưới 15m2", "Từ 15m2 đến 20m2", "Trên 20m2"};
-    String[] price = {"--Chọn mức giá--", "Từ 1tr đến 2tr", "Từ 2tr đến 5tr"};
+    String[] price = {"--Chọn mức giá--", "Từ 1tr đến 2tr", "Từ 2tr đến 5tr", "Trên 5tr"};
     ArrayList<String> cityList;
     ArrayList<String> districtList;
     ArrayList<String> precinctList;
@@ -187,7 +187,7 @@ public class SearchFragment extends Fragment implements  com.rey.material.widget
                         break;
                     case 3:
                         params.put("minSquare", "20");
-                        params.put("maxSquare", "1000");
+                        params.put("maxSquare", "");
                         break;
                 }
             }
@@ -201,12 +201,16 @@ public class SearchFragment extends Fragment implements  com.rey.material.widget
                         params.put("maxPrice", "");
                         break;
                     case 1:
-                        params.put("minPrice", "1000");
-                        params.put("maxPrice", "2000");
+                        params.put("minPrice", "0");
+                        params.put("maxPrice", "2000000");
                         break;
                     case 2:
-                        params.put("minPrice", "2000");
-                        params.put("maxPrice", "5000");
+                        params.put("minPrice", "2000000");
+                        params.put("maxPrice", "5000000");
+                        break;
+                    case 3:
+                        params.put("minPrice", "5000000");
+                        params.put("maxPrice", "");
                         break;
                 }
             }
