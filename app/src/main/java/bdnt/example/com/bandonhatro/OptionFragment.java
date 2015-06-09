@@ -2,12 +2,10 @@ package bdnt.example.com.bandonhatro;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.rey.material.app.DialogFragment;
 import com.rey.material.app.SimpleDialog;
@@ -16,7 +14,7 @@ import bdnt.example.com.bandonhatro.helper.SessionManager;
 
 public class OptionFragment extends DialogFragment {
     TextView btnDangTin;
-    TextView btnLinkToLoginScreen;
+
     TextView btnGioiThieu;
     TextView btnGopY;
     private SessionManager session;
@@ -30,6 +28,22 @@ public class OptionFragment extends DialogFragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_option, container, false);
         session = new SessionManager(getActivity());
+        btnGioiThieu= (TextView) v.findViewById(R.id.btnGioiThieu);
+        btnGopY = (TextView) v.findViewById(R.id.btnGopY);
+        btnGopY.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),GopY.class);
+                startActivity(intent);
+            }
+        });
+        btnGioiThieu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),Gioithieu.class);
+                startActivity(intent);
+            }
+        });
         btnDangTin = (TextView) v.findViewById(R.id.btnNewPost);
         btnDangTin.setOnClickListener(new View.OnClickListener() {
             @Override

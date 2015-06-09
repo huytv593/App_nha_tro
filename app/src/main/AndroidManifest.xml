@@ -86,7 +86,19 @@
         <activity
             android:name=".VolleyListView.Dialog"
             android:label="@string/title_activity_dialog"
-            android:theme="@style/Theme.AppCompat.Light.DialogWhenLarge">
+            android:theme="@style/Theme.AppCompat.Light.DialogWhenLarge" >
+        </activity>
+        <activity
+            android:name=".Gioithieu"
+            android:label="Giới thiệu"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+            android:name=".GopY"
+            android:label="Góp ý"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustPan">
         </activity>
     </application>
 

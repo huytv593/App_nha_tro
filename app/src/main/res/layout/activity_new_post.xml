@@ -8,62 +8,33 @@
 
     <TableRow
         android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:background="@color/tab_bg">
+        android:layout_height="60dp"
+        android:background="#00B9E6"
+        android:gravity="center_vertical">
 
-        <TableRow
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="left">
+        <ImageView
+            android:id="@+id/imvLogInBack"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/arrleft" />
 
-            <ImageView
-                android:id="@+id/imvBack"
-                android:layout_width="30dp"
-                android:layout_height="25dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/pre" />
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:text="Đăng tin"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+        <ImageView
+            android:id="@+id/imvSend"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/sendx512"/>
 
-            <TextView
-                android:id="@+id/txtBack"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_marginTop="15dp"
-                android:gravity="center"
-                android:text="Đăng tin nhà trọ"
-                android:textColor="#ffffffff"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="right">
-
-            <ImageView
-                android:id="@+id/imvPost"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-
-                android:layout_marginTop="10dp"
-                android:background="@drawable/upload" />
-
-            <TextView
-                android:id="@+id/txtPost"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:text="Đăng tin"
-                android:textColor="#ffffffff"
-                android:textStyle="bold" />
-        </TableRow>
     </TableRow>
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -71,305 +42,406 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
 
-            <View
-                android:layout_width="match_parent"
-
-
-                android:layout_height="1dp"
-                android:background="#00796B" />
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:orientation="horizontal"
-                android:paddingBottom="5dp"
-                android:paddingTop="5dp">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="75dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/camera"
-                    android:scaleType="fitXY" />
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_margin="10dp"
 
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="75dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/camera"
+                    android:background="@drawable/image_boder"
                     android:scaleType="fitXY" />
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="fill_parent"
-                android:layout_height="25dp"
-                android:layout_marginBottom="5dp"
-                android:background="@color/tab_bg"
-                android:gravity="center_vertical"
-                android:paddingLeft="5dp"
-
-                android:text="Thông tin cơ bản"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#ffffffff" />
-
             <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="209dp"
-                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/image_boder"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:paddingTop="2dp">
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:text="Thông tin cơ bản" />
 
-                    <TextView
-                        android:id="@+id/textView3"
-                        android:layout_width="150dp"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:text="Tỉnh/Thành phố"
-
-                        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-                    <Spinner
-                        android:id="@+id/spinner2"
-
-                        android:layout_width="200dp"
-                        android:layout_height="match_parent"
-                        android:background="#FFFFFF"
-                        android:gravity="center_vertical" />
-                </LinearLayout>
-
-                <LinearLayout
+                <View
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:paddingTop="2dp">
+                    android:layout_height="1dp"
+                    android:background="@color/divider_bg" />
 
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="150dp"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:text="Quận/Huyện"
-
-                        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-                    <Spinner
-                        android:id="@+id/spQuanhuyen"
-                        android:layout_width="200dp"
-                        android:layout_height="match_parent"
-                        android:background="#FFFFFF"
-                        android:gravity="center_vertical" />
-                </LinearLayout>
-
-                <LinearLayout
+                <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:paddingTop="2dp">
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical">
 
-                    <TextView
-                        android:id="@+id/textView5"
-                        android:layout_width="150dp"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:text="Phường/Xã"
+                    <com.rey.material.widget.Spinner
+                        android:id="@+id/spnCity"
+                        style="@style/Material.Widget.Spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        app:rd_enable="true"
+                        app:rd_style="@style/Material.Drawable.Ripple.Wave.Light"
 
-                        android:textAppearance="?android:attr/textAppearanceMedium" />
+                        app:spn_arrowAnimDuration="@android:integer/config_shortAnimTime"
+                        app:spn_arrowInterpolator="@android:anim/decelerate_interpolator"
+                        app:spn_arrowSwitchMode="true"
+                        app:spn_dividerColor="@color/divider_bg" />
 
-                    <Spinner
-                        android:id="@+id/spPhuongxa"
-                        android:layout_width="200dp"
-                        android:layout_height="match_parent"
-                        android:background="#FFFFFF"
-                        android:gravity="center_vertical" />
-                </LinearLayout>
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="15dp"
+                        android:background="@drawable/to" />
 
-                <LinearLayout
+                    <com.rey.material.widget.Spinner
+                        android:id="@+id/spnDistric"
+                        style="@style/Material.Widget.Spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        app:rd_enable="true"
+                        app:rd_style="@style/Material.Drawable.Ripple.Wave.Light"
+
+                        app:spn_arrowAnimDuration="@android:integer/config_shortAnimTime"
+                        app:spn_arrowInterpolator="@android:anim/decelerate_interpolator"
+                        app:spn_arrowSwitchMode="true"
+                        app:spn_dividerColor="@color/divider_bg" />
+
+
+                </TableRow>
+
+                <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:paddingTop="2dp">
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical">
 
-                    <TextView
-                        android:id="@+id/textView6"
-                        android:layout_width="150dp"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:text="Đường/Phố"
+                    <com.rey.material.widget.Spinner
+                        android:id="@+id/spnArea"
+                        style="@style/Material.Widget.Spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        app:rd_enable="true"
+                        app:rd_style="@style/Material.Drawable.Ripple.Wave.Light"
 
-                        android:textAppearance="?android:attr/textAppearanceMedium" />
+                        app:spn_arrowAnimDuration="@android:integer/config_shortAnimTime"
+                        app:spn_arrowInterpolator="@android:anim/decelerate_interpolator"
+                        app:spn_arrowSwitchMode="true"
+                        app:spn_dividerColor="@color/divider_bg" />
 
-                    <Spinner
-                        android:id="@+id/spDuongpho"
-                        android:layout_width="200dp"
-                        android:layout_height="match_parent"
-                        android:background="#FFFFFF"
-                        android:gravity="center_vertical" />
-                </LinearLayout>
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="15dp"
+                        android:background="@drawable/to" />
 
-                <LinearLayout
+                    <com.rey.material.widget.Spinner
+                        android:id="@+id/spnStreet"
+                        style="@style/Material.Widget.Spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        app:rd_enable="true"
+                        app:rd_style="@style/Material.Drawable.Ripple.Wave.Light"
+
+                        app:spn_arrowAnimDuration="@android:integer/config_shortAnimTime"
+                        app:spn_arrowInterpolator="@android:anim/decelerate_interpolator"
+                        app:spn_arrowSwitchMode="true"
+                        app:spn_dividerColor="@color/divider_bg" />
+
+
+                </TableRow>
+
+                <com.rey.material.widget.EditText
+                    android:id="@+id/edtNumber"
+                    style="@style/Material.Widget.EditText.Light"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/white"
+                    android:hint="Số nhà 1, ngõ 2, ngách 3....."
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:textColor="@color/input_login"
+                    android:textColorHint="@color/input_login_hint"
+                    app:et_dividerColor="@color/divider_bg" />
+
+                <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:paddingTop="2dp">
-
-                    <TextView
-                        android:id="@+id/textView8"
-                        android:layout_width="150dp"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:text="Diện tích"
-
-                        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-                    <EditText
-                        android:id="@+id/edtDientich"
-
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical">
+                    <TextView android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:gravity="bottom"
+                        android:text="Gía: "/>
+                    <com.rey.material.widget.EditText
+                        android:id="@+id/edtPrice"
+                        style="@style/Material.Widget.EditText.Light"
                         android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:background="@color/white"
+                        android:hint="3 000 000"
 
-                        android:layout_height="match_parent"
-                        android:background="#FFFFFF"
-                        android:gravity="center_vertical" />
-                </LinearLayout>
 
-                <LinearLayout
+                        android:singleLine="true"
+                        android:textColor="@color/input_login"
+                        android:textColorHint="@color/input_login_hint"
+                        app:et_dividerColor="@color/divider_bg" />
+                    <TextView android:layout_width="20dp"
+                        android:layout_height="40dp"
+                        android:gravity="bottom"
+
+                        android:text="đ "/>
+
+                </TableRow>
+                <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:paddingTop="2dp">
-
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="150dp"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:text="Giá cho thuê"
-
-                        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-                    <EditText
-                        android:id="@+id/edtGia"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical">
+                    <TextView android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:gravity="bottom"
+                        android:text="Diện tích: "/>
+                    <com.rey.material.widget.EditText
+                        android:id="@+id/edtArea"
+                        style="@style/Material.Widget.EditText.Light"
                         android:layout_width="200dp"
-                        android:layout_height="match_parent"
-                        android:background="#FFFFFF"
-                        android:gravity="center_vertical" />
-                </LinearLayout>
+                        android:layout_height="wrap_content"
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:paddingTop="2dp">
+                        android:background="@color/white"
+                        android:hint="3 000 000"
+                        android:inputType="number"
 
-                    <TextView
-                        android:id="@+id/txt2"
-                        android:layout_width="150dp"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:text="Ngày hết hạn"
+                        android:singleLine="true"
+                        android:textColor="@color/input_login"
+                        android:textColorHint="@color/input_login_hint"
+                        app:et_dividerColor="@color/divider_bg" />
+                    <TextView android:layout_width="30dp"
+                        android:layout_height="40dp"
+                        android:gravity="bottom"
+                        android:text="m2 "/>
 
-                        android:textAppearance="?android:attr/textAppearanceMedium" />
+                </TableRow>
 
-                    <EditText
-                        android:id="@+id/edtNgayhh"
-                        android:layout_width="200dp"
-                        android:layout_height="match_parent"
-                        android:background="#FFFFFF"
-                        android:gravity="center_vertical" />
-                </LinearLayout>
+
 
             </LinearLayout>
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/image_boder"
+            android:orientation="vertical">
             <TextView
-                android:id="@+id/txt3"
-                android:layout_width="fill_parent"
-                android:layout_height="25dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/tab_bg"
-                android:gravity="center_vertical"
-
-                android:paddingLeft="5dp"
-                android:text="Thông tin liên hệ"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#ffffffff" />
-
-            <EditText
-                android:id="@+id/edtSdt"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_marginBottom="1dp"
-                android:alpha="0.8"
-                android:background="#FFFFFF"
+                android:layout_marginLeft="10dp"
                 android:gravity="center_vertical"
-                android:hint="0988888888"
-                android:inputType="phone"
-                android:paddingLeft="5dp"
-                android:textStyle="italic" />
-
-            <EditText
-                android:id="@+id/edtEmail"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:alpha="0.8"
-                android:background="#FFFFFF"
-                android:gravity="center_vertical"
-                android:hint="email@gmail.com"
-                android:inputType="textEmailAddress"
-                android:paddingLeft="5dp"
-                android:textStyle="italic" />
-
-            <TextView
-                android:id="@+id/txt"
-                android:layout_width="fill_parent"
-                android:layout_height="25dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/tab_bg"
-                android:gravity="center_vertical"
-                android:paddingLeft="5dp"
-
-                android:text="Mô tả chi tiết"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#ffffffff" />
-
+                android:text="Thông tin chi tiết" />
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#00796B" />
-
-            <EditText
-                android:id="@+id/edtMota"
+                android:background="@color/divider_bg" />
+            <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginBottom="10dp"
-                android:alpha="0.8"
-                android:background="#FFFFFF"
-                android:gravity="top|left"
-                android:hint="Có nóng lạnh tiện nghi đầy đủ,...."
-                android:paddingLeft="5dp"
-                android:textStyle="italic" />
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical">
+                <TextView android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:gravity="bottom"
+                    android:text="Tiêu đề: "/>
+                <com.rey.material.widget.EditText
+                    android:id="@+id/edtTitle"
+                    style="@style/Material.Widget.EditText.Light"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="@color/white"
+                    android:hint="Nhà trọ số....."
+
+
+                    android:layout_marginRight="10dp"
+                    android:singleLine="true"
+                    android:textColor="@color/input_login"
+                    android:textColorHint="@color/input_login_hint"
+                    app:et_dividerColor="@color/divider_bg" />
+
+
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical">
+                <TextView android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:gravity="bottom"
+                    android:text="Mô tả: "/>
+                <com.rey.material.widget.EditText
+                    android:id="@+id/edtDescip"
+                    style="@style/Material.Widget.EditText.Light"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="@color/white"
+                    android:hint="Nhà trọ an toàn tiện nghi có chỗ để xe..."
+
+                    android:layout_marginRight="10dp"
+                    android:singleLine="true"
+                    android:textColor="@color/input_login"
+                    android:textColorHint="@color/input_login_hint"
+                    app:et_dividerColor="@color/divider_bg" />
+
+
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical">
+                <TextView android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:gravity="bottom"
+                    android:text="Ngày hết hạn: "/>
+                <com.rey.material.widget.EditText
+                    android:id="@+id/edtOutofdate"
+                    style="@style/Material.Widget.EditText.Light"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="@color/white"
+                    android:hint="01/01/2015"
+
+                    android:padding="10dp"
+                    android:layout_marginRight="10dp"
+                    android:singleLine="true"
+                    android:textColor="@color/input_login"
+                    android:textColorHint="@color/input_login_hint"
+                    app:et_dividerColor="@color/divider_bg" />
+
+
+            </TableRow>
+
+
+
+
+
 
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/image_boder"
+            android:orientation="vertical">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical">
+                <TextView android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:gravity="bottom"
+                    android:text="Thông tin liên hệ: "/>
+                <com.rey.material.widget.EditText
+                    android:id="@+id/edtInfo"
+                    style="@style/Material.Widget.EditText.Light"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="@color/white"
+                    android:hint="Nguyễn Văn A"
+
+                    android:padding="10dp"
+                    android:layout_marginRight="10dp"
+                    android:singleLine="true"
+                    android:textColor="@color/input_login"
+                    android:textColorHint="@color/input_login_hint"
+                    app:et_dividerColor="@color/divider_bg" />
+
+
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical">
+                <TextView android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:gravity="bottom"
+                    android:text="Số điện thoại: "/>
+                <com.rey.material.widget.EditText
+                    android:id="@+id/edtPhoneNumber"
+                    style="@style/Material.Widget.EditText.Light"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="@color/white"
+                    android:hint="0969696969"
+                    android:inputType="phone"
+                    android:padding="10dp"
+                    android:layout_marginRight="10dp"
+                    android:singleLine="true"
+                    android:textColor="@color/input_login"
+                    android:textColorHint="@color/input_login_hint"
+                    app:et_dividerColor="@color/divider_bg" />
+
+
+            </TableRow>
+        </LinearLayout>
+
+
+        </LinearLayout>
+
+
     </ScrollView>
 
 </LinearLayout>

@@ -24,5 +24,7 @@
     <string name="title_activity_room_list_view">Kết quả tìm kiếm</string>
     <string name="title_activity_room_details">room_details</string>
     <string name="title_activity_dialog">Dialog</string>
+    <string name="title_activity_gioithieu">Gioithieu</string>
+    <string name="title_activity_gop_y">GopY</string>
 
 </resources>
