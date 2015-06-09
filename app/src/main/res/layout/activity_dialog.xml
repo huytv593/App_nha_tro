@@ -2,64 +2,151 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+android:background="#FFFFFF"
     android:orientation="vertical"
-
-    android:layout_height="match_parent">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Chọn mức giá"
-        android:textStyle="bold"
-        android:id="@+id/textView9"
-        android:layout_gravity="center_horizontal" />
-
-
-    <TextView
-        android:id="@+id/slider_tv_continuous"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        android:textSize="23sp"
-        android:layout_marginTop="5dp"
-        android:layout_gravity="center_horizontal"
-
-        android:gravity="center"/>
-    <com.rey.material.widget.Slider
-        style="@style/Material.Widget.Slider"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="20dp"
-        app:sl_minValue="0"
-        app:sl_maxValue="30"
-        app:sl_value="0"
-        android:layout_marginRight="80dp"
-        android:layout_marginLeft="80dp"
-        android:id="@+id/slider" />
+    >
 
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_gravity="center_horizontal">
+        android:background="@color/tab_bg"
+
+        >
+
+        <ImageView
+            android:id="@+id/imvBack2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/arrleft" />
+
+        <TextView
+            android:id="@+id/result_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:lines="1"
+            android:text="Lọc"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+
+            />
+    </TableRow>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#FFFFFF">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:text="Bán kính: "
+                android:textSize="18sp" />
+
+            <EditText
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                android:id="@+id/filiter_bankinh"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:text=""
+                android:layout_span="3"
+                android:selectAllOnFocus="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:text="Km"
+                android:textSize="18sp"
+                android:textColor="#000"/>
+
+        </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+
+            android:background="#CFD8DC" />
+        <TableRow
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#FFFFFF"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:text="Giá: "
+                android:textSize="18sp" />
+
+            <EditText
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                android:id="@+id/filter_gia1"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text=""
+                android:selectAllOnFocus="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="->"
+                android:textSize="24sp"/>
+            <EditText
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                android:id="@+id/filter_gia2"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text=""
+                android:selectAllOnFocus="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:text="Triệu "
+                android:textSize="18sp"
+                android:textColor="#000"/>
+
+        </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+
+            android:background="#CFD8DC" />
+    </TableLayout>
+
+
+
+
+
+
+
+
+
 
         <com.rey.material.widget.Button
-            android:layout_height="40dp"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:id="@+id/btnClose"
-            android:text="Đóng"/>
-        <com.rey.material.widget.Button
-            android:layout_height="40dp"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:background="@color/background_material_light"
+            android:layout_marginTop="50dp"
             android:id="@+id/btnOke"
-            android:text="Áp dụng"/>
-    </TableRow>
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:text="Áp dụng"
+            android:layout_gravity="center"
+     />
+
 </LinearLayout>

@@ -1,16 +1,5 @@
 package bdnt.example.com.bandonhatro;
 
-import bdnt.example.com.bandonhatro.AppConfig;
-import bdnt.example.com.bandonhatro.AppController;
-import bdnt.example.com.bandonhatro.VolleyListView.Dialog;
-import bdnt.example.com.bandonhatro.helper.SessionManager;
-
-import java.util.HashMap;
-import java.util.Map;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -25,6 +14,14 @@ import com.android.volley.Request.Method;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import bdnt.example.com.bandonhatro.helper.SessionManager;
 
 public class LoginActivity extends Activity {
     // LogCat tag

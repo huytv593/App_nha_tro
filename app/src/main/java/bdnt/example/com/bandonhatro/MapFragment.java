@@ -1,6 +1,7 @@
 package bdnt.example.com.bandonhatro;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.location.Criteria;
 import android.location.Location;
@@ -26,6 +27,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import bdnt.example.com.bandonhatro.VolleyListView.Dialog;
 
 
 public class MapFragment extends Fragment  {
@@ -123,6 +126,8 @@ public class MapFragment extends Fragment  {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "filter", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), Dialog.class);
+                startActivity(intent);
             }
         });
         mapList.setOnClickListener(new View.OnClickListener() {
