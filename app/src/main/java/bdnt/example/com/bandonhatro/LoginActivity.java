@@ -7,13 +7,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request.Method;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.rey.material.widget.EditText;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,11 +29,12 @@ public class LoginActivity extends Activity {
     // LogCat tag
     private static final String TAG = RegisterActivity.class.getSimpleName();
     private Button btnLogin;
-    private Button btnLinkToRegister;
+    private TextView btnLinkToRegister;
     private EditText inputEmail;
     private EditText inputPassword;
     private ProgressDialog pDialog;
     private SessionManager session;
+    private ImageView back;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,8 +44,14 @@ public class LoginActivity extends Activity {
         inputEmail = (EditText) findViewById(R.id.email);
         inputPassword = (EditText) findViewById(R.id.password);
         btnLogin = (Button) findViewById(R.id.btnLogin);
-        btnLinkToRegister = (Button) findViewById(R.id.btnLinkToRegisterScreen);
-
+        btnLinkToRegister = (TextView) findViewById(R.id.tvRegister);
+        back= (ImageView) findViewById(R.id.imvLogInBack);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         // Progress dialog
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
@@ -117,7 +126,7 @@ public class LoginActivity extends Activity {
 
                         // Launch main activity
                         Intent intent = new Intent(LoginActivity.this,
-                                ProfileActivity.class);
+                                NewPostActivity.class);
                         startActivity(intent);
                         finish();
                     } else {

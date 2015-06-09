@@ -8,20 +8,20 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.Spinner;
-import android.widget.TextView;
+
+import com.rey.material.widget.Spinner;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
-public class NewPostActivity extends Activity implements AdapterView.OnItemSelectedListener{
+public class NewPostActivity extends Activity {
     private Spinner citySpinner;
     private Spinner districtSpinner;
     private Spinner precinctSpinner;
     private Spinner streetSpinner;
     ImageView imvPost;
-    TextView txtPost;
+
 
     HashMap<String, String> dictionary;
     HashMap<String, String[]> arrayMap;
@@ -50,29 +50,99 @@ public class NewPostActivity extends Activity implements AdapterView.OnItemSelec
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       setContentView(R.layout.activity_new_post);
+        setContentView(R.layout.activity_new_post);
         initData();
-        citySpinner = (Spinner) findViewById(R.id.spinner2);
-        districtSpinner = (Spinner) findViewById(R.id.spQuanhuyen);
-        precinctSpinner = (Spinner) findViewById(R.id.spPhuongxa);
-        streetSpinner = (Spinner) findViewById(R.id.spDuongpho);
-imvPost=(ImageView)findViewById(R.id.imvPost);
-        txtPost=(TextView)findViewById(R.id.txtPost);
+        citySpinner = (Spinner) findViewById(R.id.spnCity);
+        districtSpinner = (Spinner) findViewById(R.id.spnDistric);
+        precinctSpinner = (Spinner) findViewById(R.id.spnArea);
+        streetSpinner = (Spinner) findViewById(R.id.spnStreet);
+imvPost=(ImageView)findViewById(R.id.imvSend);
+
         cityStringArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, cityList);
         districtStringArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, districtList);
         precinctStringArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, precinctList);
         streetStringArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, streetList);
-
+        districtList.add("--Chọn quận/huyện--");
+        precinctList.add("--Chọn phường/xã--");
+        streetList.add("--Chọn đường phố--");
         citySpinner.setAdapter(cityStringArrayAdapter);
         districtSpinner.setAdapter(districtStringArrayAdapter);
         precinctSpinner.setAdapter(precinctStringArrayAdapter);
 
         streetSpinner.setAdapter(streetStringArrayAdapter);
 
-        citySpinner.setOnItemSelectedListener(this);
-        districtSpinner.setOnItemSelectedListener(this);
-        precinctSpinner.setOnItemSelectedListener(this);
-        streetSpinner.setOnItemSelectedListener(this);
+        citySpinner.setOnItemSelectedListener(new com.rey.material.widget.Spinner.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(com.rey.material.widget.Spinner spinner, View view, int position, long l) {
+                com.rey.material.widget.Spinner currentSpinner;
+                currentSpinner = spinner;
+                if (position == 0) {
+                    emptyArrayList(districtList);
+
+                    districtStringArrayAdapter.notifyDataSetChanged();
+                    params.put("city", "");
+                } else {
+                    int pos = currentSpinner.getSelectedItemPosition();
+                    String item = cityList.get(pos);
+                    loadDistrictContent(item);
+                    params.put("city", item);
+
+                }
+            }
+        });
+        districtSpinner.setOnItemSelectedListener(new com.rey.material.widget.Spinner.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(com.rey.material.widget.Spinner spinner, View view, int position, long l) {
+                com.rey.material.widget.Spinner currentSpinner;
+                currentSpinner = (com.rey.material.widget.Spinner) spinner;
+                if (position == 0) {
+                    emptyArrayList(precinctList);
+                    precinctList.add("--Chọn phường/xã--");
+                    precinctStringArrayAdapter.notifyDataSetChanged();
+                    params.put("district", "");
+                } else {
+                    int pos = currentSpinner.getSelectedItemPosition();
+                    String item = districtList.get(pos);
+                    loadPrecinctContent(item);
+                    params.put("district", item);
+
+                }
+            }
+        });
+        precinctSpinner.setOnItemSelectedListener(new com.rey.material.widget.Spinner.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(com.rey.material.widget.Spinner spinner, View view, int position, long l) {
+                com.rey.material.widget.Spinner currentSpinner;
+                currentSpinner = (com.rey.material.widget.Spinner ) spinner;
+                if (position == 0) {
+                    emptyArrayList(streetList);
+                    streetList.add("--Chọn đường phố--");
+                    streetStringArrayAdapter.notifyDataSetChanged();
+                    params.put("precinct", "");
+                } else {
+                    int pos = currentSpinner.getSelectedItemPosition();
+                    String item = precinctList.get(pos);
+                    loadStreetContent(item);
+                    params.put("precinct", item);
+                }
+            }
+        });
+        streetSpinner.setOnItemSelectedListener(new com.rey.material.widget.Spinner.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(com.rey.material.widget.Spinner spinner, View view, int position, long l) {
+                com.rey.material.widget.Spinner currentSpinner;
+                currentSpinner = (com.rey.material.widget.Spinner ) spinner;
+                if (position == 0) {
+                    params.put("street", "");
+                } else {
+                    int pos = currentSpinner.getSelectedItemPosition();
+                    String item = streetList.get(pos);
+                    params.put("street", item);
+                }
+            }
+        });
+
+
         imvPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,79 +161,62 @@ imvPost=(ImageView)findViewById(R.id.imvPost);
                 alert11.show();
             }
         });
-        txtPost.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AlertDialog.Builder builder1 = new AlertDialog.Builder(NewPostActivity.this);
-                builder1.setMessage("Đăng tin thành công");
-                builder1.setCancelable(true);
-                builder1.setPositiveButton("OK.",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
 
-
-                AlertDialog alert11 = builder1.create();
-                alert11.show();
-            }
-        });
 
     }
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        Spinner currentSpinner = (Spinner) parent;
-        switch (currentSpinner.getId()) {
-            case R.id.spinner2:
-                if (position == 0) {
-                    emptyArrayList(districtList);
-                    districtList.add("--Chọn quận huyện--");
-                    districtStringArrayAdapter.notifyDataSetChanged();
-                    params.put("city", "");
-                } else {
-                    String item = currentSpinner.getItemAtPosition(position).toString();
-                    loadDistrictContent(item);
-                    params.put("city", item);
-
-                }
-
-                break;
-            case R.id.spQuanhuyen:
-                if (position == 0) {
-                    emptyArrayList(precinctList);
-                    precinctList.add("--Chọn phường xã--");
-                    precinctStringArrayAdapter.notifyDataSetChanged();
-                    params.put("district", "");
-                } else {
-                    String item = currentSpinner.getItemAtPosition(position).toString();
-                    loadPrecinctContent(item);
-                    params.put("district", item);
-                }
-                break;
-            case R.id.spPhuongxa:
-                if (position == 0) {
-                    emptyArrayList(streetList);
-                    streetList.add("--Chọn đường phố--");
-                    streetStringArrayAdapter.notifyDataSetChanged();
-                    params.put("precinct", "");
-                } else {
-                    String item = currentSpinner.getItemAtPosition(position).toString();
-                    loadStreetContent(item);
-                    params.put("precinct", item);
-                }
-                break;
-            case R.id.spDuongpho:
-                if (position == 0) {
-                    params.put("street", "");
-                } else {
-                    String item = currentSpinner.getItemAtPosition(position).toString();
-                    params.put("street", item);
-                }
-                break;
-
-        }
-    }
+//    @Override
+//    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//        Spinner currentSpinner = (Spinner) parent;
+//        switch (currentSpinner.getId()) {
+//            case R.id.spinner2:
+//                if (position == 0) {
+//                    emptyArrayList(districtList);
+//                    districtList.add("--Chọn quận huyện--");
+//                    districtStringArrayAdapter.notifyDataSetChanged();
+//                    params.put("city", "");
+//                } else {
+//                    String item = currentSpinner.getItemAtPosition(position).toString();
+//                    loadDistrictContent(item);
+//                    params.put("city", item);
+//
+//                }
+//
+//                break;
+//            case R.id.spQuanhuyen:
+//                if (position == 0) {
+//                    emptyArrayList(precinctList);
+//                    precinctList.add("--Chọn phường xã--");
+//                    precinctStringArrayAdapter.notifyDataSetChanged();
+//                    params.put("district", "");
+//                } else {
+//                    String item = currentSpinner.getItemAtPosition(position).toString();
+//                    loadPrecinctContent(item);
+//                    params.put("district", item);
+//                }
+//                break;
+//            case R.id.spPhuongxa:
+//                if (position == 0) {
+//                    emptyArrayList(streetList);
+//                    streetList.add("--Chọn đường phố--");
+//                    streetStringArrayAdapter.notifyDataSetChanged();
+//                    params.put("precinct", "");
+//                } else {
+//                    String item = currentSpinner.getItemAtPosition(position).toString();
+//                    loadStreetContent(item);
+//                    params.put("precinct", item);
+//                }
+//                break;
+//            case R.id.spDuongpho:
+//                if (position == 0) {
+//                    params.put("street", "");
+//                } else {
+//                    String item = currentSpinner.getItemAtPosition(position).toString();
+//                    params.put("street", item);
+//                }
+//                break;
+//
+//        }
+//    }
     public void onNothingSelected(AdapterView<?> arg0) {
         // TODO Auto-generated method stub
 
