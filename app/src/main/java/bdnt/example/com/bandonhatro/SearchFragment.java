@@ -44,7 +44,7 @@ public class SearchFragment extends Fragment implements  com.rey.material.widget
     String[] langthuong = {"--Chọn đường phố--", "Pháo Đài Láng"};
     String[] langha = {"--Chọn đường phố--", "Huỳnh Thúc Kháng"};
     String[] square = {"--Chọn diện tích--", "Dưới 15m2", "Từ 15m2 đến 20m2", "Trên 20m2"};
-    String[] price = {"--Chọn mức giá--", "Từ 1tr đến 2tr", "Từ 2tr đến 5tr", "Trên 5tr"};
+    String[] price = {"--Chọn mức giá--", "Dưới 2tr", "Từ 2tr đến 5tr", "Trên 5tr"};
     ArrayList<String> cityList;
     ArrayList<String> districtList;
     ArrayList<String> precinctList;

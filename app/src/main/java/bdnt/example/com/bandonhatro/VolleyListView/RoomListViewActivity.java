@@ -78,7 +78,7 @@ public class RoomListViewActivity extends ActionBarActivity {
         result_title = (TextView) findViewById(R.id.result_title);
 
         pDialog = new ProgressDialog(this);
-        pDialog.setMessage("Loading...");
+        pDialog.setMessage("Đang tìm kiếm...");
         pDialog.show();
 
     }
@@ -114,6 +114,10 @@ public class RoomListViewActivity extends ActionBarActivity {
                         room.setImgb(object.getString("imgb"));
                         room.setImgc(object.getString("imgc"));
                         room.setImgd(object.getString("imgd"));
+                        room.setLatit(object.getString("latit"));
+                        room.setLongit(object.getString("longit"));
+                        room.setCtName(object.getString("contact_name"));
+                        room.setCtPhone(object.getString("contact_phone"));
                         roomList.add(room);
                     }
                 } catch (JSONException e) {
