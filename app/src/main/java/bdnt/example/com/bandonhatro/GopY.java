@@ -1,17 +1,32 @@
 package bdnt.example.com.bandonhatro;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TableRow;
 
 
 public class GopY extends ActionBarActivity {
+    private TableRow back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_gop_y);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+        back= (TableRow) findViewById(R.id.tbback);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     @Override

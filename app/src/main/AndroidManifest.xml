@@ -93,12 +93,14 @@
         <activity
             android:name=".Gioithieu"
             android:label="Giới thiệu"
+            android:theme="@style/AppTheme"
             android:launchMode="singleTop"
             android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
             android:name=".GopY"
             android:label="Góp ý"
+            android:theme="@style/AppTheme"
             android:launchMode="singleTop"
             android:windowSoftInputMode="adjustPan">
         </activity>

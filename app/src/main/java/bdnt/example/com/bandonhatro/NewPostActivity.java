@@ -20,6 +20,7 @@ public class NewPostActivity extends Activity {
     private Spinner districtSpinner;
     private Spinner precinctSpinner;
     private Spinner streetSpinner;
+    private ImageView back;
     ImageView imvPost;
 
 
@@ -31,7 +32,7 @@ public class NewPostActivity extends Activity {
     String[] caugiay = {"--Chọn phường/xã--", "Dịch Vọng Hậu", "Mai Dịch", "Dịch Vọng"};
     String[] badinh = {"--Chọn phường/xã--", "Đội Cấn"};
     String[] dongda = {"--Chọn phường/xã--", "Láng Thượng", "Láng Hạ"};
-    String[] dichvonghau = {"--Chọn đường phố--", "Xuân Thủy","impossible to find"};
+    String[] dichvonghau = {"--Chọn đường phố--", "Xuân Thủy", "impossible to find"};
     String[] maidich = {"--Chọn đường phố--", "Hồ Tùng Mậu", "Phạm Văn Đồng", "Doãn Kế Thiện"};
     String[] dichvong = {"--Chọn đường phố--", "Thành Thái"};
     String[] doican = {"--Chọn đường phố--", "Ngọc Hà"};
@@ -56,8 +57,14 @@ public class NewPostActivity extends Activity {
         districtSpinner = (Spinner) findViewById(R.id.spnDistric);
         precinctSpinner = (Spinner) findViewById(R.id.spnArea);
         streetSpinner = (Spinner) findViewById(R.id.spnStreet);
-imvPost=(ImageView)findViewById(R.id.imvSend);
-
+        imvPost = (ImageView) findViewById(R.id.imvSend);
+        back= (ImageView) findViewById(R.id.imvNewPostBack);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         cityStringArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, cityList);
         districtStringArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, districtList);
         precinctStringArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, precinctList);
@@ -113,7 +120,7 @@ imvPost=(ImageView)findViewById(R.id.imvSend);
             @Override
             public void onItemSelected(com.rey.material.widget.Spinner spinner, View view, int position, long l) {
                 com.rey.material.widget.Spinner currentSpinner;
-                currentSpinner = (com.rey.material.widget.Spinner ) spinner;
+                currentSpinner = (com.rey.material.widget.Spinner) spinner;
                 if (position == 0) {
                     emptyArrayList(streetList);
                     streetList.add("--Chọn đường phố--");
@@ -131,7 +138,7 @@ imvPost=(ImageView)findViewById(R.id.imvSend);
             @Override
             public void onItemSelected(com.rey.material.widget.Spinner spinner, View view, int position, long l) {
                 com.rey.material.widget.Spinner currentSpinner;
-                currentSpinner = (com.rey.material.widget.Spinner ) spinner;
+                currentSpinner = (com.rey.material.widget.Spinner) spinner;
                 if (position == 0) {
                     params.put("street", "");
                 } else {
@@ -164,7 +171,8 @@ imvPost=(ImageView)findViewById(R.id.imvSend);
 
 
     }
-//    @Override
+
+    //    @Override
 //    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 //        Spinner currentSpinner = (Spinner) parent;
 //        switch (currentSpinner.getId()) {
@@ -221,6 +229,7 @@ imvPost=(ImageView)findViewById(R.id.imvSend);
         // TODO Auto-generated method stub
 
     }
+
     private void initData() {
         //init dictionary
         dictionary = new HashMap<>();
