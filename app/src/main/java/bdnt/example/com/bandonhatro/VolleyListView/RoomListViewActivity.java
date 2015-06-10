@@ -95,8 +95,10 @@ public class RoomListViewActivity extends ActionBarActivity {
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject object = jsonArray.getJSONObject(i);
                         Room room = new Room();
+
                         room.setTitle(object.getString("title"));
                         room.setId(object.getString("id"));
+                        room.setPhoneNumber(object.getString("contact_phone"));
                         room.setCreate_by(object.getString("created_by"));
                         room.setCreate_at(object.getString("created_at"));
                         room.setEnd_at(object.getString("end_at"));

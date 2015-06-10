@@ -16,7 +16,7 @@ public class Room implements Serializable{
     private String price;
     private String city;
     private String district;
-
+    private String phoneNumber;
 
     private String precinct;
     private String street;
@@ -30,7 +30,13 @@ public class Room implements Serializable{
 
     public Room() {
     }
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
 
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
     public String getId() {
         return id;
     }

@@ -2,6 +2,8 @@ package bdnt.example.com.bandonhatro;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -15,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Gallery;
 import android.widget.ImageView;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
@@ -25,10 +28,11 @@ import bdnt.example.com.bandonhatro.VolleyListView.Room;
 
 public class room_details extends ActionBarActivity {
     ImageView back;
-    TextView tv_roomDetailTitle, tv_roomDetailSquare, tv_roomDetailPrice, tv_roomDetailAddress, tv_roomDetailEndAt, tv_roomDetailInfo;
+    TextView tv_roomDetailTitle, tv_roomDetailSquare, tv_roomDetailPrice, tv_roomDetailAddress, tv_roomDetailEndAt, tv_roomDetailInfo,tv_phoneNumber;
     Gallery gallery;
     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
-
+    TableRow call ;
+    TableRow sms;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +48,7 @@ public class room_details extends ActionBarActivity {
             }
         });
 
+
     }
 
     private void initial() {
@@ -54,11 +59,31 @@ public class room_details extends ActionBarActivity {
         tv_roomDetailEndAt = (TextView) findViewById(R.id.tvNgayhethan);
         tv_roomDetailInfo = (TextView) findViewById(R.id.tvMota);
         gallery = (Gallery) findViewById(R.id.gallery);
-
+        tv_phoneNumber= (TextView) findViewById(R.id.tvDienthoai);
+        call = (TableRow) findViewById(R.id.tbCall);
+        sms= (TableRow) findViewById(R.id.tbSendMSms);
     }
 
     private void deployment() {
-        Room roomData = (Room) getIntent().getSerializableExtra("roomData");
+        final Room roomData = (Room) getIntent().getSerializableExtra("roomData");
+        call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_CALL);
+
+                intent.setData(Uri.parse("tel:" + roomData.getPhoneNumber()));
+                startActivity(intent);
+            }
+        });
+        sms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_SENDTO,Uri.parse("sms:"+roomData.getPhoneNumber()));
+
+
+                startActivity(intent);
+            }
+        });
         Log.d("pass room data", roomData.toString());
         tv_roomDetailTitle.setText(roomData.getTitle());
         tv_roomDetailSquare.setText("Diện tích: "+roomData.getArea());
@@ -66,7 +91,7 @@ public class room_details extends ActionBarActivity {
         tv_roomDetailAddress.setText("Địa chỉ: "+roomData.getAddress());
         tv_roomDetailInfo.setText("Mô tả chi tiết: "+roomData.getInfo());
         tv_roomDetailEndAt.setText(roomData.getEnd_at());
-
+        tv_phoneNumber.setText("Điện thoại: "+roomData.getPhoneNumber());
         if (imageLoader == null)
             imageLoader = AppController.getInstance().getImageLoader();
         final String images[]={roomData.getImga(),roomData.getImgb(),roomData.getImgc(),roomData.getImgd()};
