@@ -3,6 +3,9 @@ package bdnt.example.com.bandonhatro;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -22,6 +25,12 @@ import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import bdnt.example.com.bandonhatro.VolleyListView.Room;
 
@@ -33,6 +42,8 @@ public class room_details extends ActionBarActivity {
     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
     TableRow call ;
     TableRow sms;
+    private GoogleMap mGoogleMap;
+    Room roomData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,7 +76,8 @@ public class room_details extends ActionBarActivity {
     }
 
     private void deployment() {
-        final Room roomData = (Room) getIntent().getSerializableExtra("roomData");
+         roomData = (Room) getIntent().getSerializableExtra("roomData");
+
         call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,10 +100,10 @@ public class room_details extends ActionBarActivity {
         tv_roomDetailTitle.setText(roomData.getTitle());
         tv_roomDetailSquare.setText("Diện tích: "+roomData.getArea());
         tv_roomDetailPrice.setText("Giá: "+roomData.getPrice());
-        tv_roomDetailAddress.setText("Địa chỉ: "+roomData.getAddress());
-        tv_roomDetailInfo.setText("Mô tả chi tiết: "+roomData.getInfo());
+        tv_roomDetailAddress.setText("Địa chỉ: " + roomData.getAddress());
+        tv_roomDetailInfo.setText("Mô tả chi tiết: " + roomData.getInfo());
         tv_roomDetailEndAt.setText(roomData.getEnd_at());
-        tv_phoneNumber.setText("Điện thoại: "+roomData.getPhoneNumber());
+        tv_phoneNumber.setText("Điện thoại: " + roomData.getPhoneNumber());
         if (imageLoader == null)
             imageLoader = AppController.getInstance().getImageLoader();
         final String images[]={roomData.getImga(),roomData.getImgb(),roomData.getImgc(),roomData.getImgd()};
@@ -104,10 +116,51 @@ public class room_details extends ActionBarActivity {
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.setContentView(R.layout.room_image_zoom_out);
                 NetworkImageView roomImageInZoomOut = (NetworkImageView) dialog.findViewById(R.id.roomImageInZoomOut);
-              roomImageInZoomOut.setImageUrl(images[position],imageLoader);
+                roomImageInZoomOut.setImageUrl(images[position], imageLoader);
                 dialog.show();
             }
         });
+        setUpMapIfNeeded();
+    }
+    private void setUpMapIfNeeded() {
+        if (mGoogleMap != null) {
+            return;
+        }
+
+        SupportMapFragment supportMapFragment =
+                (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.roomOnMap);
+        mGoogleMap=supportMapFragment.getMap();
+        if (mGoogleMap != null) {
+            startDemo();
+        }
+
+    }
+    public void startDemo(){
+        mGoogleMap.setMyLocationEnabled(true);
+//        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+//        Criteria criteria = new Criteria();
+//        String provider = locationManager.getBestProvider(criteria, true);
+//        Location myLocation = locationManager.getLastKnownLocation(provider);
+
+        double latitude = Double.parseDouble(roomData.getLatit()+"0");
+
+
+        double longitude = Double.parseDouble(roomData.getLongit()+"0");
+        if(latitude==0){
+            latitude=21.0436057;
+        }
+        if(longitude==0){
+            longitude=105.7775885;
+        }
+        // Show the current location in Google Map
+        LatLng latLng = new LatLng(latitude, longitude);
+        mGoogleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+        mGoogleMap.animateCamera(CameraUpdateFactory.zoomTo(14));
+        if (roomData.getLatit().equals("")){
+            longitude=105.7775885;
+        }
+
+       mGoogleMap.addMarker(new MarkerOptions().position(new LatLng(latitude,longitude )).title(roomData.getTitle()).snippet(roomData.getAddress()));
     }
 
     @Override
@@ -173,5 +226,6 @@ public class room_details extends ActionBarActivity {
             roomDetails_images.setImageUrl(images[position], imageLoader);
             return convertView;
         }
+
     }
 }

@@ -15,6 +15,5 @@ public class AppConfig {
     public static final String URL_POST="http://timnhatro.huytran.info/nhatros/post";
     public static final String ROOT_URL_IMG="";
     public static final String TAG_ROOM="Nhatro";
-
-
+    public static final String URL_MAP="http://timnhatro.huytran.info/nhatros/api_map";
 }
