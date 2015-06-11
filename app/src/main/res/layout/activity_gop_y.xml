@@ -23,7 +23,7 @@
         android:layout_height="40dp"
         android:layout_marginLeft="20dp"
         android:gravity="center_vertical"
-        android:text="Đăng tin"
+        android:text="Góp ý"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
 
